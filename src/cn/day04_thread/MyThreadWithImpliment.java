@@ -1,4 +1,4 @@
-package bin.day04_thread;
+package cn.day04_thread;
 
 public class MyThreadWithImpliment implements Runnable {
   private int x;

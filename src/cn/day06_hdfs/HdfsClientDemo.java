@@ -1,4 +1,4 @@
-package bin.day06_hdfs;
+package cn.day06_hdfs;
 
 import java.net.URI;
 import java.util.Iterator;
