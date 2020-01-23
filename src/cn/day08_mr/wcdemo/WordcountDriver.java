@@ -26,7 +26,7 @@ public class WordcountDriver {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf);
         // 指定本程序的jar包所在的本地路径
-        job.setJarByClass(WordcountMapper.class);
+        job.setJarByClass(WordcountDriver.class);
         // 指定本业务job要使用的mapper/reducer业务类
         job.setMapperClass(WordcountMapper.class);
         job.setReducerClass(WordcountReducer.class);
