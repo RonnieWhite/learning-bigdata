@@ -1,4 +1,4 @@
-package cn.day09_actual.rjoin;
+package cn.day09_actual;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -57,7 +57,7 @@ public class RJoin {
 
     static class RJoinReducer extends Reducer<Text, InfoBean, InfoBean, NullWritable> {
         @Override
-        protected void reduce(Text pid, Iterable<InfoBean> beans, Context context) throws IOException, InterruptedException {
+        protected void  reduce(Text pid, Iterable<InfoBean> beans, Context context) throws IOException, InterruptedException {
             InfoBean pdBean = new InfoBean();
             ArrayList<InfoBean> orderBeans = new ArrayList<InfoBean>();
             for (InfoBean bean : beans) {
@@ -70,7 +70,7 @@ public class RJoin {
                 } else {
                     InfoBean odbean = new InfoBean();
                     try {
-                        BeanUtils.copyProperties(odbean, bean);
+                         BeanUtils.copyProperties(odbean, bean);
                         orderBeans.add(odbean);
                     } catch (Exception e) {
                         e.printStackTrace();

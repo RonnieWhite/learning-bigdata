@@ -1,4 +1,4 @@
-package cn.day09_actual.rjoin;
+package cn.day09_actual;
 
 import java.io.DataInput;
 import java.io.DataOutput;
