@@ -1,8 +1,8 @@
-package practise;
+package practise.day01;
 
 import java.io.*;
 
-public class io_practise {
+public class ioPractise {
     public static void main(String[] args) throws Exception {
         /**
          BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("E://test1")));
