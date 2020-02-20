@@ -1,4 +1,4 @@
-package practise;
+package practise.day01;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.hadoop.io.LongWritable;
@@ -7,6 +7,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
+import practise.day01.JoinBean;
 
 import java.io.IOException;
 import java.util.ArrayList;

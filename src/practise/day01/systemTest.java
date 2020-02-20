@@ -1,4 +1,4 @@
-package practise;
+package practise.day01;
 
 public class systemTest {
     public static void main(String[] args) {

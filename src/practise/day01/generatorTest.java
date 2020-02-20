@@ -1,4 +1,4 @@
-package practise;
+package practise.day01;
 
 public class generatorTest {
     private int id;

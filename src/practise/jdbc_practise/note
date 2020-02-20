@@ -1,0 +1,19 @@
+JDBC(Java DataBase Connectivity)是Java与数据库之间的一个桥梁，是一个规范而不是一个实现，能够执行SQL语句。它由一组用Java
+语言编写的类和接口组成。各种不同类型的数据库都有相应的实现。
+
+Statement接口创建之后，可以执行SQL语句，完成对数据库的增删改查。其中 ，增删改只需要改变SQL语句的内容就能完成，然而查询略显复杂。
+在Statement中使用字符串拼接的方式，该方式存在句法复杂，容易犯错等缺点，具体在下文中的对比中介绍。所以Statement在实际过程中
+使用的非常的少，所以具体的放到PreparedStatement那里给出详细代码。字符串拼接方式的SQL语句是非常繁琐的，
+中间有很多的单引号和双引号的混用，极易出错。
+
+与 Statement一样，PreparedStatement也是用来执行sql语句的与创建Statement不同的是，
+需要根据sql语句创建PreparedStatement。除此之外，还能够通过设置参数，指定相应的值，而不是Statement那样使用字符串拼接。
+
+execute和executeUpdate的区别
+相同点：二者都能够执行增加、删除、修改等操作。
+
+不同点：
+
+1、execute可以执行查询语句，然后通过getResult把结果取出来。executeUpdate不能执行查询语句。
+
+2、execute返回Boolean类型，true表示执行的是查询语句，false表示执行的insert、delete、update等。executeUpdate的返回值是int，表示有多少条数据受到了影响。

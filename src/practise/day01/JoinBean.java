@@ -1,4 +1,4 @@
-package practise;
+package practise.day01;
 
 import org.apache.hadoop.io.Writable;
 
