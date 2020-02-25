@@ -1,0 +1,44 @@
+本项目未push到github的大文件：
+    lib/flink-dist_2.11-1.10.0.jar
+netcat命令：
+    windows: nc -l -p 9999
+    linux: nc -l -k 9999
+
+批处理使用DataSet API
+流处理使用DataStream API
+
+大数据处理的流程：
+    MapReduce: input -> map(reduce) -> output
+    Storm: input -> Spout/Bolt -> output
+    Spark: input -> transformation/action -> output
+    Flink: input -> transformation/sink -> output
+
+Flink编程模型：
+    1) 获取执行环境
+    2) 获取数据
+    3) transformation
+    4) sink
+    5) 触发执行
+
+learning_flink/course03下的代码展示了指定key的字段表达式和key选择器两种方式，目前为止的三种指定key的表达式已学习完成，分别是：
+    1) Tupe指定
+    2) 字段表达式指定
+    3) key选择器
+
+指定转换函数：
+    1) 直接new一个FlatMapFunction并重载flatMap方法，text.flatMap(new FlatMapFunction<String, WC>() {}
+    2) 定义一个类实现FlatMapFunction接口并重载flatMap方法（myFlatMapFunction为实现类），text.flatMap(new myFlatMapFunction())
+    3） jdk8的匿名函数方法
+    4) Rich functions text.flatMap(new RichFlatMapFunction<String, WC>() {}
+
+flink支持的数据类型：
+    1) Java Tuples and Scala Case Classes
+    2) Java POJOs -- 类必须为public， 必须有无参构造 必须有getter和setter方法
+    3) Primitive Types -- 基本数据类型
+    4) Regular Classes -- 通用类型
+    5) Values
+    6) Hadoop Writables
+    7) Special Types
+
+DataSet API编程：
+进度4-03

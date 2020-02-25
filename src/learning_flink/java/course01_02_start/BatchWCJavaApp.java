@@ -1,4 +1,4 @@
-package learning_flink.java_demo;
+package learning_flink.java.course01_02_start;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.ExecutionEnvironment;
