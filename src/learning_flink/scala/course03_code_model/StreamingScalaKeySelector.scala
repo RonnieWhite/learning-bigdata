@@ -2,6 +2,7 @@ package learning_flink.scala.course03_code_model
 
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
 import org.apache.flink.streaming.api.windowing.time.Time
+import org.apache.flink.api.scala._
 
 object StreamingScalaKeySelector {
   def main(args: Array[String]): Unit = {
