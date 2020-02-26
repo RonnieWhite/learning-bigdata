@@ -7,7 +7,8 @@ object DataSetDataSourceApp {
   def main(args: Array[String]): Unit = {
     val env: ExecutionEnvironment = ExecutionEnvironment.getExecutionEnvironment
     //    fromCollection(env)
-    readTextFile(env)
+    //    readTextFile(env)
+    readCsvFile(env)
 
   }
 
@@ -19,5 +20,9 @@ object DataSetDataSourceApp {
 
   def readTextFile(env: ExecutionEnvironment): Unit = {
     env.readTextFile("E:/data/flink/input").print()
+  }
+
+  def readCsvFile(env: ExecutionEnvironment): Unit = {
+    env.readCsvFile[(String, Int, String)]("E:/data/flink/input/person.csv", ignoreFirstLine = true).print()
   }
 }
