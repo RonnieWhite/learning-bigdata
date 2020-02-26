@@ -1,4 +1,4 @@
-package main.java.learning_hadoop.cn.day09_actual;
+package learning_hadoop.cn.day09_actual;
 
 import java.io.DataInput;
 import java.io.DataOutput;

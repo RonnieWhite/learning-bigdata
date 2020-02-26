@@ -1,4 +1,4 @@
-package main.java.learning_hadoop.cn.day10_actual.inverindex;
+package learning_hadoop.cn.day10_actual.inverindex;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

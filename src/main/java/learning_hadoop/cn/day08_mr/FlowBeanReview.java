@@ -1,4 +1,4 @@
-package main.java.learning_hadoop.cn.day08_mr;
+package learning_hadoop.cn.day08_mr;
 
 import org.apache.hadoop.io.Writable;
 

@@ -1,4 +1,4 @@
-package main.java.learning_hadoop.cn.day08_mr.flowsum;
+package learning_hadoop.cn.day08_mr.flowsum;
 
 import java.io.DataInput;
 import java.io.DataOutput;
