@@ -1,4 +1,4 @@
-package main.java.practise.day20字节流.BufferedInputStream和BufferedOutputStream;
+package practise.day20字节流.BufferedInputStream和BufferedOutputStream;
 
 import org.junit.Test;
 

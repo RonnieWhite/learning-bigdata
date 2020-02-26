@@ -1,4 +1,4 @@
-package main.java.practise.review;
+package practise.review;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.ExecutionEnvironment;

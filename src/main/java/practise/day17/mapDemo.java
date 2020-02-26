@@ -1,4 +1,4 @@
-package main.java.practise.day17;
+package practise.day17;
 
 import java.util.HashMap;
 import java.util.Map;

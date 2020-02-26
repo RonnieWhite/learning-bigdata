@@ -1,4 +1,4 @@
-package main.java.practise.review.review_game;
+package practise.review.review_game;
 
 import java.util.Scanner;
 

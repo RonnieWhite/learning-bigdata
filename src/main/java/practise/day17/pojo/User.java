@@ -1,4 +1,4 @@
-package main.java.practise.day17.pojo;
+package practise.day17.pojo;
 
 public class User {
     // 用户名

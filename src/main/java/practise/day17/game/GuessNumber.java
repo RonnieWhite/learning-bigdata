@@ -1,4 +1,4 @@
-package main.java.practise.day17.game;
+package practise.day17.game;
 
 import java.util.Scanner;
 

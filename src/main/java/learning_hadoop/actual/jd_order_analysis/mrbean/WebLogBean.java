@@ -1,4 +1,4 @@
-package main.java.learning_hadoop.actual.jd_order_analysis.mrbean;
+package learning_hadoop.actual.jd_order_analysis.mrbean;
 
 import org.apache.hadoop.io.Writable;
 

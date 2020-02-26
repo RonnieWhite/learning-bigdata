@@ -1,4 +1,4 @@
-package main.java.practise.jdbc_practise;
+package practise.jdbc_practise;
 
 
 import java.sql.*;

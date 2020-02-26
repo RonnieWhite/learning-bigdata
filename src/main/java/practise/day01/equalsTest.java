@@ -1,4 +1,4 @@
-package main.java.practise.day01;
+package practise.day01;
 
 public class equalsTest {
     public static void main(String[] args) {

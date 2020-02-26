@@ -1,6 +1,6 @@
-package main.java.practise.review.review_dao;
+package practise.review.review_dao;
 
-import main.java.practise.review.review_pojo.User;
+import practise.review.review_pojo.User;
 
 public interface UserDao {
     public boolean login(String username, String password);

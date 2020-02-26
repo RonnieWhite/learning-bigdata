@@ -1,9 +1,9 @@
-package main.java.practise.day17.test;
+package practise.day17.test;
 
-import main.java.practise.day17.dao.UserDao;
-import main.java.practise.day17.dao.impl.UserDaoImpl;
-import main.java.practise.day17.game.GuessNumber;
-import main.java.practise.day17.pojo.User;
+import practise.day17.dao.UserDao;
+import practise.day17.dao.impl.UserDaoImpl;
+import practise.day17.game.GuessNumber;
+import practise.day17.pojo.User;
 
 import java.util.Scanner;
 

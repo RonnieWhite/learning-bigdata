@@ -1,4 +1,4 @@
-package main.java.practise.review;
+package practise.review;
 
 import org.junit.Test;
 

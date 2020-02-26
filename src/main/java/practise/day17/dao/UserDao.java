@@ -1,6 +1,6 @@
-package main.java.practise.day17.dao;
+package practise.day17.dao;
 
-import main.java.practise.day17.pojo.User;
+import practise.day17.pojo.User;
 
 public interface UserDao {
     /**

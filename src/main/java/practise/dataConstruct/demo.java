@@ -1,4 +1,4 @@
-package main.java.practise.dataConstruct;
+package practise.dataConstruct;
 
 import org.junit.Test;
 
