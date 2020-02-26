@@ -1,4 +1,4 @@
-package learning_flink.scala.course04_dataset
+package main.learning_flink.scala.course04_dataset
 
 import org.apache.flink.api.scala.ExecutionEnvironment
 import org.apache.flink.api.scala._

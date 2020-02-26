@@ -1,4 +1,4 @@
-package learning_flink.scala.course01_02_start
+package main.learning_flink.scala.course01_02_start
 
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
 import org.apache.flink.streaming.api.windowing.time.Time

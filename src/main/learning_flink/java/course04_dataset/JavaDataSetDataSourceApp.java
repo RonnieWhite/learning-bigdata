@@ -1,4 +1,4 @@
-package learning_flink.java.course04_dataset;
+package main.learning_flink.java.course04_dataset;
 
 import org.apache.flink.api.java.ExecutionEnvironment;
 
