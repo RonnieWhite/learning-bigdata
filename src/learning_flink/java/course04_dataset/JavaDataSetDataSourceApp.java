@@ -1,7 +1,6 @@
 package learning_flink.java.course04_dataset;
 
 import org.apache.flink.api.java.ExecutionEnvironment;
-import org.apache.flink.runtime.executiongraph.Execution;
 
 import java.util.ArrayList;
 import java.util.List;
