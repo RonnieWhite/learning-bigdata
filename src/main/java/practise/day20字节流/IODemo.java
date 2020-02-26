@@ -1,4 +1,4 @@
-package practise.day20字节流;
+package main.java.practise.day20字节流;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package practise.day21字符流;
+package main.java.practise.day21字符流;
 
 import org.junit.Test;
 

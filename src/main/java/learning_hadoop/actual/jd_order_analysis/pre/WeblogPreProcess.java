@@ -1,4 +1,4 @@
-package learning_hadoop.actual.jd_order_analysis.pre;
+package main.java.learning_hadoop.actual.jd_order_analysis.pre;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-import learning_hadoop.actual.jd_order_analysis.mrbean.WebLogBean;
-import learning_hadoop.actual.jd_order_analysis.mrbean.WebLogParser;
+import main.java.learning_hadoop.actual.jd_order_analysis.mrbean.WebLogBean;
+import main.java.learning_hadoop.actual.jd_order_analysis.mrbean.WebLogParser;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 

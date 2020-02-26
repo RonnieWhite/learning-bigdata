@@ -1,4 +1,4 @@
-package practise.day18;
+package main.java.practise.day18;
 
 import java.util.Map;
 import java.util.Set;

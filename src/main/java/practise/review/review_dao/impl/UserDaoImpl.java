@@ -1,7 +1,7 @@
-package practise.review.review_dao.impl;
+package main.java.practise.review.review_dao.impl;
 
-import practise.review.review_dao.UserDao;
-import practise.review.review_pojo.User;
+import main.java.practise.review.review_dao.UserDao;
+import main.java.practise.review.review_pojo.User;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package practise.day01;
+package main.java.practise.day01;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.hadoop.io.LongWritable;

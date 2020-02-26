@@ -1,4 +1,4 @@
-package learning_hadoop.cn.review;
+package main.java.learning_hadoop.cn.review;
 
 import org.apache.hadoop.io.Writable;
 

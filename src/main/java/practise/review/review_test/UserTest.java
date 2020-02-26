@@ -1,9 +1,9 @@
-package practise.review.review_test;
+package main.java.practise.review.review_test;
 
-import practise.review.review_dao.UserDao;
-import practise.review.review_dao.impl.UserDaoImpl;
-import practise.review.review_game.GuessNumber;
-import practise.review.review_pojo.User;
+import main.java.practise.review.review_dao.UserDao;
+import main.java.practise.review.review_dao.impl.UserDaoImpl;
+import main.java.practise.review.review_game.GuessNumber;
+import main.java.practise.review.review_pojo.User;
 
 import java.util.Scanner;
 

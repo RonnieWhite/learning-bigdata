@@ -1,4 +1,4 @@
-package practise.day01;
+package main.java.practise.day01;
 
 import java.io.*;
 

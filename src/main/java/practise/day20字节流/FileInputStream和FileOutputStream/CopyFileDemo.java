@@ -1,4 +1,4 @@
-package practise.day20字节流.FileInputStream和FileOutputStream;
+package main.java.practise.day20字节流.FileInputStream和FileOutputStream;
 
 import org.junit.Test;
 

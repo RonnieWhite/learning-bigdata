@@ -1,4 +1,4 @@
-package learning_hadoop.cn.day08_mr.wcdemo;
+package main.java.learning_hadoop.cn.day08_mr.wcdemo;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

@@ -1,7 +1,7 @@
-package learning_hadoop.actual.jd_order_analysis.pre;
+package main.java.learning_hadoop.actual.jd_order_analysis.pre;
 
-import learning_hadoop.actual.jd_order_analysis.mrbean.WebLogBean;
-import learning_hadoop.actual.jd_order_analysis.mrbean.WebLogParser;
+import main.java.learning_hadoop.actual.jd_order_analysis.mrbean.WebLogBean;
+import main.java.learning_hadoop.actual.jd_order_analysis.mrbean.WebLogParser;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.LongWritable;

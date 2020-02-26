@@ -1,4 +1,4 @@
-package learning_hadoop.cn.day10_actual.fensi;
+package main.java.learning_hadoop.cn.day10_actual.fensi;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

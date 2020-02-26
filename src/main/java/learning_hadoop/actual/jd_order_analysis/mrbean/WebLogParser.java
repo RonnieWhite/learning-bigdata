@@ -1,4 +1,4 @@
-package learning_hadoop.actual.jd_order_analysis.mrbean;
+package main.java.learning_hadoop.actual.jd_order_analysis.mrbean;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

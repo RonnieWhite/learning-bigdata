@@ -1,4 +1,4 @@
-package practise.day22;
+package main.java.practise.day22;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package learning_hadoop.cn.day08_mr.log;
+package main.java.learning_hadoop.cn.day08_mr.log;
 
 import java.util.Date;
 

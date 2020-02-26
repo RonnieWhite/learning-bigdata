@@ -1,4 +1,4 @@
-package practise.jdbc_practise;
+package main.java.practise.jdbc_practise;
 
 public class People {
     private int id;

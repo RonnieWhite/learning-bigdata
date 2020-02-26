@@ -1,7 +1,7 @@
-package practise.day17.dao.impl;
+package main.java.practise.day17.dao.impl;
 
-import practise.day17.dao.UserDao;
-import practise.day17.pojo.User;
+import main.java.practise.day17.dao.UserDao;
+import main.java.practise.day17.pojo.User;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package practise.review.review_pojo;
+package main.java.practise.review.review_pojo;
 
 public class User {
     private String username;

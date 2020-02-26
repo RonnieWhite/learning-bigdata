@@ -1,4 +1,4 @@
-package learning_hadoop.cn.day08_mr.flowsum;
+package main.java.learning_hadoop.cn.day08_mr.flowsum;
 
 import java.io.IOException;
 

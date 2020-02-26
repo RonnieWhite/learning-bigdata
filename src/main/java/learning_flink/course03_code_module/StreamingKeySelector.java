@@ -1,4 +1,4 @@
-package learning_flink.course03_code_module;
+package main.java.learning_flink.course03_code_module;
 
 import org.apache.flink.api.common.functions.FlatMapFunction;
 import org.apache.flink.api.java.functions.KeySelector;
