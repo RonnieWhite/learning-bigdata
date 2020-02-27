@@ -41,4 +41,7 @@ flink支持的数据类型：
     7) Special Types
 
 DataSet API编程：
-进度4-08完结
+    1) 数据加载 fromCollection readTextFile 解决了自己造值、csv文件读取、递归读取、以及压缩文件读取
+    2) transformation：map filter
+
+    4.16完结
