@@ -42,6 +42,9 @@ flink支持的数据类型：
 
 DataSet API编程：
     1) 数据加载 fromCollection readTextFile 解决了自己造值、csv文件读取、递归读取、以及压缩文件读取
-    2) transformation：map filter
+    2) transformation：
+       map filter mapPartition(生产中用得多)
+       first flatMap distinct join(leftOuterJoin rightOuterJoin fullOuterJoin)
 
-    4.16完结
+
+    4.27完结
