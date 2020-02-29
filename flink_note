@@ -45,6 +45,9 @@ DataSet API编程：
     2) transformation：
        map filter mapPartition(生产中用得多)
        first flatMap distinct join(leftOuterJoin rightOuterJoin fullOuterJoin)
+       cross
+    3) 计数器
+    4) 分布式缓存
+    5) 广播变量  自学
 
 
-    4.27完结

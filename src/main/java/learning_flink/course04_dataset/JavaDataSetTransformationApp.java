@@ -2,6 +2,7 @@ package main.java.learning_flink.course04_dataset;
 
 import org.apache.flink.api.common.functions.*;
 import org.apache.flink.api.java.ExecutionEnvironment;
+import org.apache.flink.api.java.operators.CrossOperator;
 import org.apache.flink.api.java.operators.DataSource;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.api.java.tuple.Tuple3;
@@ -18,7 +19,8 @@ public class JavaDataSetTransformationApp {
 //        filterFunc(env);
 //        mapPartitionFunc(env);
 //        flatMapFunc(env);
-        joinFunc(env);
+//        joinFunc(env);
+        crossFunc(env);
     }
 
     public static void mapFunc(ExecutionEnvironment env) throws Exception {
@@ -120,5 +122,19 @@ public class JavaDataSetTransformationApp {
                 }
             }
         }).print();
+    }
+
+    public static void crossFunc(ExecutionEnvironment env) throws Exception {
+        List<String> list1 = new ArrayList<>();
+        List<Integer> list2 = new ArrayList<>();
+        list1.add("曼城");
+        list1.add("曼联");
+        list2.add(1);
+        list2.add(2);
+        list2.add(3);
+        DataSource<String> data1 = env.fromCollection(list1);
+        DataSource<Integer> data2 = env.fromCollection(list2);
+        CrossOperator.DefaultCross<String, Integer> data3 = (CrossOperator.DefaultCross<String, Integer>) data1.cross(data2);
+        data3.print();
     }
 }
