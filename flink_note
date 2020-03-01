@@ -48,6 +48,16 @@ DataSet API编程：
        cross
     3) 计数器
     4) 分布式缓存
-    5) 广播变量  自学
+    5) 广播变量
 
-
+DataStream API编程：
+    1) Flink自定义数据源：StreamExecutionEnvironment.addSource(sourceFunction)
+        -- 实现SourceFunction以创建一个无并行的数据源
+        -- 实现ParallelSourceFunction接口
+        -- 继承RichParallelSourceFunction以创建一个能够并行的数据源
+    2) 算子：除DataSet里所讲的之外，重点关注map和filter的连用, union, split+select
+    4) Flink自定义Sink：
+        -- 自定义类继承RichSinkFunction<T> T为要写入对象的类型
+        -- 重写方法：
+           -- open/close 生命周期方法
+           -- invoke 每条记录执行一次
