@@ -1,0 +1,13 @@
+Scala的特性：
+    1) 可伸缩（Scalable）
+    2) 纯正的面向对象语言
+    3) 函数式语言
+    4) 无缝的Java互操作
+三种变量修饰符：
+    1) val定义immutable variable
+    2) var定义mutable variable
+    3) lazy val 被调用时才会被计算，用来定义可能不会被调用的变量
+
+数据类型：
+    note_img/scala类型体系.png main\scala\note_img\scala类型体系.png
+    ![](main/scala/note_img/scala类型体系.png)
