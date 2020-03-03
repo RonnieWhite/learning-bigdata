@@ -63,4 +63,6 @@ DataStream API编程：
            -- invoke 每条记录执行一次
 
 Time Windows编程:
-
+    1) 事件时间 Event Time
+    2) 摄取时间 Ingestion Time
+    3) 处理时间 Processing Time
