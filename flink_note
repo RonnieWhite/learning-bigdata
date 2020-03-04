@@ -63,6 +63,23 @@ DataStream API编程：
            -- invoke 每条记录执行一次
 
 Time Windows编程:
-    1) 事件时间 Event Time
-    2) 摄取时间 Ingestion Time
-    3) 处理时间 Processing Time
+    1) 处理时间类型
+        -- 事件时间 Event Time
+        -- 摄取时间 Ingestion Time
+        -- 处理时间 Processing Time
+    2) 设置处理时间类型
+       env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
+    3) 窗口分配器：定义如何将数据分配给窗口
+       每个传入的数据被分配到一个或多个窗口
+       分类：
+           -- 滚动窗口 tumbling windows 常用
+                    固定大小，不会重叠
+           -- 滑动窗口 sliding windows 常用
+                    固定大小，可能会重叠
+           -- 会话窗口 session windows
+           -- 全局窗口 global windows
+           通过继承WindowAssigner, 可自定义窗口
+
+       窗口方法：
+           reduce -- 流式，有一个计算一个
+           process -- 批量，等本批次数据到齐后计算一次
