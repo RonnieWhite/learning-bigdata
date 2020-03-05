@@ -83,3 +83,11 @@ Time Windows编程:
        窗口方法：
            reduce -- 流式，有一个计算一个
            process -- 批量，等本批次数据到齐后计算一次
+
+Connectors:
+    1) hdfs connector
+    2) kafka connector
+
+Flink运行:
+    1) 启动服务：bin/start-cluster.sh
+    2) 运行任务：./bin/flink run examples/streaming/SocketWindowWordCount.jar --port 9000
