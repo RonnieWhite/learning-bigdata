@@ -91,3 +91,50 @@ Connectors:
 Flink运行:
     1) 启动服务：bin/start-cluster.sh
     2) 运行任务：./bin/flink run examples/streaming/SocketWindowWordCount.jar --port 9000
+
+ON YARN是企业级用得最多的方式
+   Required
+     -n,--container <arg>   Number of YARN container to allocate (=Number of Task Managers)
+   Optional
+     -D <arg>                        Dynamic properties
+     -d,--detached                   Start detached
+     -id,--applicationId <arg>       Attach to running YARN session
+     -j,--jar <arg>                  Path to Flink jar file
+     -jm,--jobManagerMemory <arg>    Memory for JobManager Container [in MB] JobManager的内存
+     -n,--container <arg>            Number of YARN container to allocate (=Number of Task Managers) TaskManagers的个数
+     -nm,--name <arg>                Set a custom name for the application on YARN
+     -q,--query                      Display available YARN resources (memory, cores)
+     -qu,--queue <arg>               Specify YARN queue.
+     -s,--slots <arg>                Number of slots per TaskManager
+     -st,--streaming                 Start Flink in streaming mode
+     -t,--ship <arg>                 Ship files in the specified directory (t for transfer)
+     -tm,--taskManagerMemory <arg>   Memory per TaskManager Container [in MB] Task Managers的内存
+     -z,--zookeeperNamespace <arg>   Namespace to create the Zookeeper sub-paths for high availability mode
+
+     1) 启动Hadoop集群：
+          到hadoop主目录下：
+             sbin/start-all.sh
+     2) 启动flink集群：
+          到flink主目录下：
+             bin/start-cluster.sh
+     3) 启动flink的yarn-session.sh
+          到flink主目录下(参数详解如上)：
+             bin/yarn-session.sh -n 1 -jm 1024 -tm 1024
+     4) 跑一个示例作业：
+          -- 先下载一个文本文档，然后传到hdfs
+          -- 执行作业
+             到flink主目录下：
+                 ./bin/flink run ./examples/batch/WordCount.jar -input hdfs://myspark:9000/LICENSE-2.0.txt -output hdfs://myspark:9000/wordcount-result.txt
+
+    在YARN上启动Flink集群
+        ./bin/flink run -m yarn-cluster -yn 2 ./examples/batch/WordCount.jar
+
+    启动flink的scala shell
+        bin/start-scala-shell.sh local
+
+Flink监控及调优：
+    1) HistoryServer
+    2) REST API
+    3) Metrics
+    4) 常用优化
+
