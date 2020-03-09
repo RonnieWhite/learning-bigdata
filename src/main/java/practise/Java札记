@@ -32,7 +32,7 @@
 
 7、ArrayList
     底层设计为简单数组
-    DEFAULT_CAPACITY：新建一个ArrayList，不传入initialCapacity时走无参构造，此时列表的初始容量为默认值10，空列表
+    DEFAULT_CAPACITY：新建一个ArrayList，不传入initialCapacity时走无参构造，此时列表的初始容量为0，当执行add的时候才会进行扩容
     size：表示ArrayList的大小，类型为int，没有使用 volatile 修饰，非线程安全
     modCount：统计当前数组被修改的版本次数，数组结构有变动，就会+1
     根据源码类描述，有：
@@ -50,3 +50,18 @@
     链表中的元素叫做Node
 
     hash值 % n(数组大小) == (n-1) & hash
+
+9、Set API其实就是对Map API的组合。巧妙利用了Map的结构特点
+   初始容量（大小）= max((期望的值/0.75 + 1),16)
+
+10、集合的坑：
+    1) 当集合的元素是自定义类时，自定义类强制实现equals和hashCode方法，并且两个都要实现。
+    2) 所有集合类，在for循环进行删除时，直接使用集合类的remove方法进行删除会报ConcurrentModificationException错误，所以任意循环删除的场景下，最好用迭代器进行删除。
+    3) 数组转化为集合时，使用的Arrays.asList(array),这个方法有两个坑：
+       -- 数组被修改后，会直接影响到新List的值
+       -- 不能对新List进行add、remove等操作，否则会报UnsupportedOperationException错误
+          形成原因是Arrays.asList方法返回的List并不是java.util.ArrayList,而是自己内部的一个静态类，该静态类直接持有数组的引用，并且没有实现add、remove等方法
+    4) 集合List转化为数组，通常使用的toArray方法，如果申明的数组大小小于List的大小的话，会得到一个元素均为null的数组。
+
+11、并发List、Map使用最多的是CopyOnWriteArrayList和ConcurrentHashMap，这两个并发类在安全和性能方面都很好
+12、链表阻塞队列LinkedBlockingQueue底层数据结构是链表，并且队列是可阻塞的。
