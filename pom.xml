@@ -15,6 +15,7 @@
         <hive.version>1.2.1</hive.version>
         <!--<hadoop.version>3.2.0</hadoop.version>-->
         <hadoop.version>2.7.3</hadoop.version>
+        <spark.version>2.4.5</spark.version>
 
         <scala.binary.version>2.11</scala.binary.version>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -23,6 +24,34 @@
     </properties>
 
     <dependencies>
+        <!--spark-->
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-core -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-core_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-sql -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-sql_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-mllib -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-mllib_2.11</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
+
+
         <!--flink java api-->
         <dependency>
             <groupId>org.apache.flink</groupId>

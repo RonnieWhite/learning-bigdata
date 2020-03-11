@@ -1,0 +1,18 @@
+1、Spark的安全性设置，默认为off（不安全）：
+    Property Name	Default	Meaning
+    spark.authenticate	false	Whether Spark authenticates its internal connections.
+    spark.authenticate.secret	None	The secret key used authentication. See above for when this configuration should be set.
+
+2、Spark运行模式：
+    1) local
+    2) standalone
+    3) cluster
+
+3、提交spark任务进行运行：
+    ./bin/spark-submit \
+      --class <main-class> \  // 主类，如： org.apache.spark.examples.SparkPi
+      --master <master-url> \ // ip,如：spark://23.195.26.187:7077
+      --deploy-mode <deploy-mode> \   // 运行模式，如：cluster  (default: client)
+      --conf <key>=<value> \  // 配置，键值对的方式
+      <application-jar> \     // jar包，如：examples/jars/spark-examples_2.11-2.2.1.jar
+      [application-arguments] // 运行参数
