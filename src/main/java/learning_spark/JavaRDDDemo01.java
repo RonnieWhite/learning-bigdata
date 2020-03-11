@@ -8,11 +8,15 @@ import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.api.java.function.Function;
+import org.apache.spark.api.java.function.Function2;
+import org.apache.spark.api.java.function.PairFunction;
 import org.apache.spark.broadcast.Broadcast;
 import org.apache.spark.rdd.RDD;
+import org.apache.spark.storage.StorageLevel;
 import org.apache.spark.util.LongAccumulator;
 import scala.Tuple2;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
@@ -31,6 +35,8 @@ public class JavaRDDDemo01 {
 //        broadcastDemo(sc);
 //        accumDemo(sc);
         wc(sc);
+//        reduceDemo(sc);
+        sc.close();
     }
 
     public static void readText(JavaSparkContext sc) {
@@ -56,10 +62,52 @@ public class JavaRDDDemo01 {
 
     public static void wc(JavaSparkContext sc) {
         JavaRDD<String> rdd = sc.textFile("E:/data/spark/README.md");
-        JavaPairRDD<String, Integer> pair = rdd.mapToPair(s -> new Tuple2<>(s, 1));
-        JavaPairRDD<String, Integer> counts = pair.reduceByKey((a, b) -> a + b);
-        System.out.println(counts);
+        /**
+         JavaPairRDD<String, Integer> pair = rdd.mapToPair(s -> new Tuple2<>(s, 1));
+         pair.persist(StorageLevel.MEMORY_ONLY());
+         JavaPairRDD<String, Integer> counts = pair.reduceByKey((a, b) -> a + b);
+         List<Tuple2<String, Integer>> collect = counts.collect();
+         System.out.println(collect);
+         */
+        JavaPairRDD<String, Integer> rdd1 = rdd.flatMap(new FlatMapFunction<String, String>() {
+            @Override
+            public Iterator<String> call(String s) throws Exception {
+                ArrayList<String> list = new ArrayList<>();
+                String[] arr = s.split(" ");
+                for (String word : arr) {
+                    list.add(word);
+                }
+                return list.iterator();
+            }
+        }).mapToPair(new PairFunction<String, String, Integer>() {
+            @Override
+            public Tuple2<String, Integer> call(String s) throws Exception {
+                return new Tuple2<String, Integer>(s, 1);
+            }
+        }).reduceByKey(new Function2<Integer, Integer, Integer>() {
+            @Override
+            public Integer call(Integer integer, Integer integer2) throws Exception {
+                return integer + integer2;
+            }
+        });
+        System.out.println(rdd1.collect());
+
+
     }
 
+    public static void reduceDemo(JavaSparkContext sc) {
+        JavaRDD<String> rdd = sc.textFile("E:/data/spark/README.md");
+        Integer reduce = rdd.map(x -> x.length()).reduce((a, b) -> a + b);
+        System.out.println(reduce);
+    }
 
+    public static void foreachDemo(JavaSparkContext sc) {
+        int counter = 0;
+        ArrayList<String> data = new ArrayList<>();
+        data.add("and");
+        data.add("tom");
+        data.add("and");
+        JavaRDD<String> rdd = sc.parallelize(data);
+
+    }
 }
