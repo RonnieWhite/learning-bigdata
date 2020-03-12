@@ -16,3 +16,13 @@
       --conf <key>=<value> \  // 配置，键值对的方式
       <application-jar> \     // jar包，如：examples/jars/spark-examples_2.11-2.2.1.jar
       [application-arguments] // 运行参数
+
+4、广播变量的注意事项：
+    1) 不能将一个RDD使用广播变量广播出去，因为RDD不存储数据，可以将RDD的结果广播出去
+    2) 广播变量只能在Driver端定义，不能在Executor端定义
+    3) 在Driver端可以修改广播变量的值，在Executor端无法修改广播变量的值
+    4) 如果Executor端用到了Driver的变量，如果不使用广播变量在Executor有多少个Task，就有多少个Driver端的变量副本
+    5) 如果Executor端用到了Driver的变量，如果使用广播变量，则在每个Executor中只有一份Driver端的变量副本
+5、累加器：
+    1) 累加器在Driver端定义赋初始值，累加器只能在Driver端读取最后的值，在Executor端更新
+    2) 累加器不是一个调优的操作，因为如果不这样做，结果是错的

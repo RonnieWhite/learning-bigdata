@@ -34,7 +34,9 @@ public class JavaRDDDemo01 {
 //        readText(sc);
 //        broadcastDemo(sc);
 //        accumDemo(sc);
-        wc(sc);
+//        wc(sc);
+//        accumDemo(sc);
+        accumDemo2(sc);
 //        reduceDemo(sc);
         sc.close();
     }
@@ -51,13 +53,20 @@ public class JavaRDDDemo01 {
     }
 
     public static void broadcastDemo(JavaSparkContext sc) {
-        Broadcast<Integer> broadcast = sc.broadcast(1);
+        Broadcast<Long> broadcast = sc.broadcast(1L);
         System.out.println(broadcast.value());
     }
 
-    public static long accumDemo(JavaSparkContext sc) {
-        LongAccumulator accum = sc.sc().longAccumulator();
-        return accum.value();
+    public static void accumDemo(JavaSparkContext sc) {
+        LongAccumulator accum = sc.sc().longAccumulator("he");
+        JavaRDD<String> rdd = sc.textFile("E:/data/spark/README.md");
+        long count = rdd.filter(new Function<String, Boolean>() {
+            @Override
+            public Boolean call(String s) throws Exception {
+                return s.contains("spark");
+            }
+        }).count();
+        System.out.println(accum.value() + count);
     }
 
     public static void wc(JavaSparkContext sc) {
@@ -101,13 +110,18 @@ public class JavaRDDDemo01 {
         System.out.println(reduce);
     }
 
-    public static void foreachDemo(JavaSparkContext sc) {
-        int counter = 0;
-        ArrayList<String> data = new ArrayList<>();
-        data.add("and");
-        data.add("tom");
-        data.add("and");
-        JavaRDD<String> rdd = sc.parallelize(data);
-
+    public static void accumDemo2(JavaSparkContext sc) {
+        LongAccumulator myCounter = sc.sc().longAccumulator("myCounter");
+        int[] arr = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        List<ArrayList<Integer>> count = sc.parallelize(Arrays.asList(arr)).map(s -> {
+            ArrayList<Integer> list = new ArrayList<>();
+            for (int i : s) {
+                if (i % 2 == 0) {
+                    list.add(i);
+                }
+            }
+            return list;
+        }).collect();
+        System.out.println(count);
     }
 }
