@@ -1,7 +1,7 @@
 package main.scala.learning_spark
 
 import org.apache.spark.SparkConf
-import org.apache.spark.sql.{DataFrame, SparkSession}
+import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}
 
 object SQLDemo {
   def main(args: Array[String]): Unit = {
@@ -18,7 +18,9 @@ object SQLDemo {
     //    session.sql("SELECT age,avg(salary) AS salary FROM person GROUP BY age").show()
     //    session.close()
     //    session.newSession().sql("SELECT age,avg(salary) AS salary FROM person GROUP BY age").show()
-    Seq(person(10, "Jojo", 32)).toDS()
+    val persons: Seq[person] = Seq(person(10, "Jojo", 32))
+    val value: Dataset[person] = persons.toDS()
+    value.show()
     session.close()
 
   }
