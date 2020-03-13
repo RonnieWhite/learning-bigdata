@@ -126,6 +126,17 @@
     <orderEntry type="library" name="Maven: org.typelevel:machinist_2.11:0.6.1" level="project" />
     <orderEntry type="library" name="Maven: com.chuusai:shapeless_2.11:2.3.2" level="project" />
     <orderEntry type="library" name="Maven: org.typelevel:macro-compat_2.11:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.spark:spark-streaming-kafka_2.11:1.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.kafka:kafka_2.11:0.8.2.1" level="project" />
+    <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-xml_2.11:1.0.2" level="project" />
+    <orderEntry type="library" name="Maven: com.yammer.metrics:metrics-core:2.2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.101tec:zkclient:0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.spark:spark-streaming-flume_2.11:2.4.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.spark:spark-streaming-flume-sink_2.11:2.4.3" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.flume:flume-ng-core:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.flume:flume-ng-configuration:1.6.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.mina:mina-core:2.0.4" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.flume:flume-ng-sdk:1.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-java:1.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-core:1.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-annotations:1.10.0" level="project" />
@@ -157,7 +168,6 @@
     <orderEntry type="library" name="Maven: org.apache.flink:flink-scala_2.11:1.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-reflect:2.11.12" level="project" />
     <orderEntry type="library" name="Maven: org.scala-lang:scala-compiler:2.11.12" level="project" />
-    <orderEntry type="library" name="Maven: org.scala-lang.modules:scala-xml_2.11:1.0.5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-streaming-scala_2.11:1.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-table-api-java-bridge_2.11:1.10.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-table-api-java:1.10.0" level="project" />
