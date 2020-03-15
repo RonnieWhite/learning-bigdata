@@ -1,4 +1,4 @@
-package main.scala.learning_spark
+package main.scala.practise
 
 import java.io.File
 

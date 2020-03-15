@@ -1,4 +1,4 @@
-package main.java.learning_spark;
+package main.java.learning_spark.rdd_broadcast_accumulator;
 
 import org.apache.flink.api.java.tuple.Tuple;
 import org.apache.spark.SparkConf;

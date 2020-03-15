@@ -1,11 +1,8 @@
-package main.scala.learning_spark
+package main.scala.learning_spark.rdd_broadcast_accumulator
 
-import akka.stream.scaladsl.Broadcast
-import org.apache.spark.SparkContext
-import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
-import org.apache.spark.broadcast
 import org.apache.spark.util.LongAccumulator
+import org.apache.spark.{SparkConf, SparkContext, broadcast}
 
 object RDDDemo01 {
   def main(args: Array[String]): Unit = {

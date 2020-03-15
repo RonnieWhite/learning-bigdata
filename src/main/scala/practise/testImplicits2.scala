@@ -1,7 +1,6 @@
-package main.scala.learning_spark
+package main.scala.practise
 
 import java.util.Date
-
 
 object testImplicits2 {
 

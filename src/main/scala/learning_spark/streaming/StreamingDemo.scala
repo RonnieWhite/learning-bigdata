@@ -1,4 +1,4 @@
-package main.scala.learning_spark
+package main.scala.learning_spark.streaming
 
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.{DStream, ReceiverInputDStream}
@@ -27,7 +27,7 @@ object StreamingDemo {
   }
 
   def runTextFile(ssc: StreamingContext) = {
-    ssc.textFileStream("E:/data/spark/streaming/*")
+    ssc.textFileStream("hdfs://myspark:9000/spark")
       .flatMap(_.split(" "))
       .map((_, 1))
       .reduceByKey(_ + _).print()
