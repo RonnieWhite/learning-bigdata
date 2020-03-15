@@ -31,5 +31,4 @@ object TransformBlackList {
     sc.awaitTermination()
     sc.stop()
   }
-
 }
