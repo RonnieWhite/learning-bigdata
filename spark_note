@@ -26,3 +26,29 @@
 5、累加器：
     1) 累加器在Driver端定义赋初始值，累加器只能在Driver端读取最后的值，在Executor端更新
     2) 累加器不是一个调优的操作，因为如果不这样做，结果是错的
+
+6、缓存和持久化：
+   1) 调用RDD.persist()或RDD.cache() 其实cache()也是调用的persist(),
+      存储等级默认为MEMORY_ONLY所以如果调用persist(),参数选择会更灵活
+   2) reduceByKey() reduceByWindow() reduceByKeyAndWindow()会自定调用存储
+
+7、Checkpoint机制：
+   1) 重写Driver方法
+   2) 配置Checkpoint
+
+8、启用预写日志机制（WAL Write Ahead Log）
+   1) 调用StreamingContext的checkpoint()方法设置一个checkpoint目录，
+   2) 然后需要将Spark.streaming.receiver.writeAheadLog.enable参数设置为true
+   这种极强的可靠性机制会导致Receiver的吞吐量大幅下降，因为单位时间内有相当一部分时间需呀将数据写入预写日志
+   如果又希望开启预写日志机制，确保数据零损失，又不希望影响系统的吞吐量，那么可以创建多个输入DStream，启动多个Receiver
+   此外，在启动了预写日志机制后，推荐将复杂持久化机制禁用掉，因为所有数据已经保存在容错的文件系统中，不需要再复制机制进行
+   持久化，保存一份副本了，只要将DStream的持久化机制设置一下即可：persist(StorageLevel.MEMORY_AND_DISK_SER)
+   (默认是基于复制的持久化策略)
+9、设置Receiver接收速度
+   如果集群资源有限，并没有大到足以让应用程序一接收到数据就立即处理它，Receiver可以被设置一个最大接收限速，以每秒接收多少条单位来限速。
+   spark.streaming.receiver.maxRate和spark.streaming.kafka.maxRatePerPartition参数可以用来设置
+   前者设置普通Receiver，后者是Kafka Direct方式（推荐后者）
+   Spark1.5后，对于Kafka Direct方式，引用了backpressure机制，从而不需要设置Receiver的限速，
+   SPark可以自动估计Receiver最合理的接收速度，并根据情况动态调整，只要将
+   spark.streaming.backpressure.enabled设置为true
+   即可
