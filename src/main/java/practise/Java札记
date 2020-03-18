@@ -65,3 +65,13 @@
 
 11、并发List、Map使用最多的是CopyOnWriteArrayList和ConcurrentHashMap，这两个并发类在安全和性能方面都很好
 12、链表阻塞队列LinkedBlockingQueue底层数据结构是链表，并且队列是可阻塞的。
+
+13、Spark SQL的性能优化技术：
+    1) 内存列存储(in-memory columnar storage)
+       Spark SQL不使用Java对象的方式进行存储，而是使用面向列的内存存储的方式进行存储。每一列作为一个数据存储的单位
+       从而大大优化了内存使用的效率。减少了对内存的消耗，也避免了gc大量数据的性能开销。
+    2) 字节码生成技术(byte-code generation)
+       Spark SQL在其catalust模块的expressions中增加了codegen模块，对于SQL语句中的计算表达式，比如
+       SELECT num+num FROM t这种sql，就可以使用动态字节码生成技术来优化其性能
+    3) Scala代码编写的优化
+       对于Scala代码的编写，可能会造成较大性能开销的地方，自己重写，使用更加复杂的方式来获取更好的性能
