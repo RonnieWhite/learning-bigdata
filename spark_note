@@ -26,3 +26,7 @@
 5、累加器：
     1) 累加器在Driver端定义赋初始值，累加器只能在Driver端读取最后的值，在Executor端更新
     2) 累加器不是一个调优的操作，因为如果不这样做，结果是错的
+
+6、Receiver启动原理剖析：
+    1) DStreamGraph保存了RDD之间的依赖关系
+    2) JobScheduler做job的调度
