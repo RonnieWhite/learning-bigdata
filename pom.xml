@@ -220,8 +220,11 @@
             <artifactId>hbase-server</artifactId>
             <version>0.96.2-hadoop2</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>5.3.1</version>
+        </dependency>
 
 
     </dependencies>
