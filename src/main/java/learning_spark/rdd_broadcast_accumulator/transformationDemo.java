@@ -10,7 +10,7 @@ import scala.Tuple2;
 import java.util.Arrays;
 import java.util.List;
 
-public class transactionDemo {
+public class transformationDemo {
     public static void main(String[] args) {
 
         SparkConf conf = new SparkConf().setAppName("td").setMaster("local[1]");
