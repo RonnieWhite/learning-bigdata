@@ -1,6 +1,9 @@
 package main.java.learning_spark.spark_sql;
 
+import org.apache.spark.SparkContext;
+
 import java.io.Serializable;
+
 
 public class JavaPerson implements Serializable {
     private String name;
