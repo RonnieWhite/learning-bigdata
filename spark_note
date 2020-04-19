@@ -52,3 +52,12 @@
    SPark可以自动估计Receiver最合理的接收速度，并根据情况动态调整，只要将
    spark.streaming.backpressure.enabled设置为true
    即可
+
+10、Spark SQL支持两种转换RDD为Dataset的方法：
+    1) 利用反射机制：
+        这种方式代码简洁，在已知schema的情况下较方便
+    2) 构造schema，然后运用到RDD上
+        这种方法比较复杂，支持在运行前不知列和类型时构造dataset
+
+    Spark SQL支持JavaBeans RDD向DataFrame的自动转换
+    目前最新版本的spark（2.4.5） Spark SQL不支持JavaBeans字段数据类型为map， 可支持list和array类型以及实现了序列化的JavaBeans
