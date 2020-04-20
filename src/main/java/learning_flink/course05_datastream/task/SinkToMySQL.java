@@ -48,6 +48,5 @@ public class SinkToMySQL extends RichSinkFunction<Student> {
         if (connection != null) {
             connection.close();
         }
-
     }
 }

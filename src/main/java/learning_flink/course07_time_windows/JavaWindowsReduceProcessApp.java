@@ -26,15 +26,6 @@ public class JavaWindowsReduceProcessApp {
             }
         }).keyBy(0)
                 .timeWindow(Time.seconds(5))
-//                .reduce((value1, value2) -> {
-//                    return new Tuple2<>(value1.f0, value1.f1 + value2.f1);
-//                })
-//                .reduce(new ReduceFunction<Tuple2<Integer, Integer>>() {
-//                    @Override
-//                    public Tuple2<Integer, Integer> reduce(Tuple2<Integer, Integer> value1, Tuple2<Integer, Integer> value2) throws Exception {
-//                        return new Tuple2<>(value1.f0, value1.f1 + value2.f1);
-//                    }
-//                })
                 .process(new ProcessWindowFunction<Tuple2<Integer, Integer>, Object, Tuple, TimeWindow>() {
                     @Override
                     public void process(Tuple tuple, Context context, Iterable<Tuple2<Integer, Integer>> elements, Collector<Object> out) throws Exception {

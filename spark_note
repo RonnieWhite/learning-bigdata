@@ -61,3 +61,30 @@
 
     Spark SQL支持JavaBeans RDD向DataFrame的自动转换
     目前最新版本的spark（2.4.5） Spark SQL不支持JavaBeans字段数据类型为map， 可支持list和array类型以及实现了序列化的JavaBeans
+
+11、SparkSQL连接hive：
+    1) hive-site.xml添加配置：
+        <property>
+          <name>hive.metastore.uris</name>
+          <value>thrift://myspark:9083</value>
+        </property>
+        <property>
+          <name>hive.metastore.schema.verification</name>
+          <value>false</value>
+        </property>
+    2) 拷贝hive-site.xml以及hadoop的core-site.xml hdfs-site.xml到spark的conf/目录下
+    3) 启动hadoop集群
+    4) 启动hive的metastore服务：bin/hive --service metastore
+    5) 服务器：启动spark-shell验证结果
+       idea开发时：
+           将上述的core-site.xml hdfs-site.xml hive-site.xml拷贝到src/main/resources目录下；
+           pom.xml引入spark-hive的依赖：
+                   <dependency>
+                       <groupId>org.apache.spark</groupId>
+                       <artifactId>spark-hive_2.11</artifactId>
+                       <version>${spark.version}</version>
+                   </dependency>
+       然后：
+           SparkSession spark = SparkSession.builder().config(conf).enableHiveSupport().getOrCreate();
+           // 查询hive表数据
+           spark.sql("SELECT * FROM ods_weblog_origin").show();
