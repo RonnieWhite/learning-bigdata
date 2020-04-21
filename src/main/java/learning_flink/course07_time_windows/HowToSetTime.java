@@ -7,5 +7,7 @@ public class HowToSetTime {
     public static void main(String[] args) {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime);
+//        env.setStreamTimeCharacteristic(TimeCharacteristic.ProcessingTime);
+//        env.setStreamTimeCharacteristic(TimeCharacteristic.IngestionTime);
     }
 }

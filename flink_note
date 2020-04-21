@@ -62,12 +62,13 @@ DataStream API编程：
 
 Time Windows编程:
     1) 处理时间类型
-        -- 事件时间 Event Time
-        -- 摄取时间 Ingestion Time
-        -- 处理时间 Processing Time
+        -- 事件时间 Event Time 生产常用，取的是数据自身带的时间戳
+        -- 摄取时间 Ingestion Time 数据进入flink集群的时间，在事件时间和处理时间之间，相较处理时间来说，资源耗费更大，但也更精准
+        -- 处理时间 Processing Time 任务执行的时间
     2) 设置处理时间类型
        env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
-    3) 窗口分配器：定义如何将数据分配给窗口
+    3) 窗口分配器(WindowAssigner)：定义如何将数据分配给窗口 并指定windows是否带key(Keyed or Non-Keyed Windows)
+        Non-Keyed Windows 因为无key，所以整个数据不会被并行执行
        每个传入的数据被分配到一个或多个窗口
        分类：
            -- 滚动窗口 tumbling windows 常用
@@ -81,6 +82,18 @@ Time Windows编程:
        窗口方法：
            reduce -- 流式，有一个计算一个
            process -- 批量，等本批次数据到齐后计算一次
+    4) 窗口Windows主要分为两大类：
+        -- 基于时间 TimeWindow
+        -- 基于数量 CountWindow
+
+    5) 生成watermark的方法：
+        -- 在source中，直接生成watermark，由source生成的watermark优先级比较低，可以被另一个方法产生的watermark覆盖掉
+        -- 通过时间戳分配器(timestamp assigner)来生成水印(watermark)。
+    5) 时间戳分配器分两种：：
+        -- With Periodic Watermarks 周期性，一定时间间隔或一定数据量
+            可以定义一个最大允许乱序的时间，这种情况应用较多
+        -- With Punctuated Watermarks 间断的，根据event决定是否产生新watermark
+
 
 Connectors:
     1) hdfs connector
