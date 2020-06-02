@@ -1,4 +1,4 @@
-package main.scala.learning_spark.rdd_broadcast_accumulator
+package learning_spark.rdd_broadcast_accumulator
 
 import org.apache.spark.{SparkConf, SparkContext}
 

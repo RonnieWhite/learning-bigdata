@@ -1,4 +1,4 @@
-package main.scala.learning_flink.course04_dataset;
+package learning_flink.course04_dataset;
 
 public class Person {
     private String name;

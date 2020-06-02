@@ -1,4 +1,4 @@
-package main.java.learning_hadoop.cn.day06_hdfs;
+package learning_hadoop.cn.day06_hdfs;
 
 import java.net.URI;
 import java.util.Iterator;

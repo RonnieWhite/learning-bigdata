@@ -1,4 +1,4 @@
-package main.scala.learning_flink.course01_02_start
+package learning_flink.course01_02_start
 
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
 import org.apache.flink.streaming.api.windowing.time.Time
@@ -18,5 +18,4 @@ object StreamingWCScalaApp {
       .setParallelism(1) // 设置并行度
     env.execute("StreamingWCScalaApp") // StreamingWCScalaApp -- 取个名
   }
-
 }

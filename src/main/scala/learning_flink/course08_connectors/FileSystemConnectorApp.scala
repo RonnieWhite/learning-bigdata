@@ -1,5 +1,4 @@
-package main.scala.learning_flink.course08_connectors
-
+package learning_flink.course08_connectors
 
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}
 import org.apache.flink.streaming.connectors.fs.StringWriter

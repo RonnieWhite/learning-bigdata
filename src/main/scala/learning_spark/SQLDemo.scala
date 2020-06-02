@@ -1,4 +1,4 @@
-package main.scala.learning_spark
+package learning_spark
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.{DataFrame, Dataset, SparkSession}

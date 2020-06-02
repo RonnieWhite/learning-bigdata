@@ -1,4 +1,4 @@
-package main.java.learning_hadoop.cn.day04_thread;
+package learning_hadoop.cn.day04_thread;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package main.scala.learning_flink.course07_time_windows
+package learning_flink.course07_time_windows
 
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment

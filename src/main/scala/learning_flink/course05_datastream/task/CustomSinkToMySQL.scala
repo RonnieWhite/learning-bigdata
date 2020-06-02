@@ -1,6 +1,5 @@
-package main.scala.learning_flink.course05_datastream.task
+package learning_flink.course05_datastream.task
 
-import main.java.learning_flink.course05_datastream.task.Student
 import org.apache.flink.api.common.functions.MapFunction
 import org.apache.flink.streaming.api.functions.sink.RichSinkFunction
 import org.apache.flink.streaming.api.scala.{DataStream, StreamExecutionEnvironment}

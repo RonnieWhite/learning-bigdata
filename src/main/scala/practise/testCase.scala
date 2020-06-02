@@ -1,4 +1,4 @@
-package main.scala.practise
+package practise
 
 object testCase {
   def main(args: Array[String]): Unit = {

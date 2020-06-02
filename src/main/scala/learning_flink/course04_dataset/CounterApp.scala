@@ -1,4 +1,4 @@
-package main.scala.learning_flink.course04_dataset
+package learning_flink.course04_dataset
 
 import org.apache.flink.api.common.JobExecutionResult
 import org.apache.flink.api.common.accumulators.LongCounter

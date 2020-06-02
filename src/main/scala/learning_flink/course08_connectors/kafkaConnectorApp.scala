@@ -1,4 +1,4 @@
-package main.scala.learning_flink.course08_connectors
+package learning_flink.course08_connectors
 
 import java.util.Properties
 

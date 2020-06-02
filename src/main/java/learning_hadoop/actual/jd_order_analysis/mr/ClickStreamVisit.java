@@ -1,7 +1,7 @@
-package main.java.learning_hadoop.actual.jd_order_analysis.mr;
+package learning_hadoop.actual.jd_order_analysis.mr;
 
-import main.java.learning_hadoop.actual.jd_order_analysis.mrbean.PageViewsBean;
-import main.java.learning_hadoop.actual.jd_order_analysis.mrbean.VisitBean;
+import learning_hadoop.actual.jd_order_analysis.mrbean.PageViewsBean;
+import learning_hadoop.actual.jd_order_analysis.mrbean.VisitBean;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;

@@ -1,4 +1,4 @@
-package main.scala.practise
+package practise
 
 object testCurrying {
   def main(args: Array[String]): Unit = {

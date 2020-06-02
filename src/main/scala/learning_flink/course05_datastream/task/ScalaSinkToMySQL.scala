@@ -1,9 +1,9 @@
-package main.scala.learning_flink.course05_datastream.task
+package learning_flink.course05_datastream.task
 
 import java.sql.{Connection, DriverManager}
 
 import com.google.gson.Gson
-import main.scala.learning_flink.course05_datastream.task.CustomSinkToMySQL.Student
+import CustomSinkToMySQL.Student
 import org.apache.flink.configuration.Configuration
 import org.apache.flink.streaming.api.functions.sink.{RichSinkFunction, SinkFunction}
 

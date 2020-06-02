@@ -1,4 +1,4 @@
-package main.java.learning_solr;
+package learning_solr;
 
 import org.apache.solr.client.solrj.beans.Field;
 

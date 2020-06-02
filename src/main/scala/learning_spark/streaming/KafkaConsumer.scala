@@ -1,4 +1,4 @@
-package main.scala.learning_spark.streaming
+package learning_spark.streaming
 
 import org.apache.kafka.clients.consumer.ConsumerRecord
 import org.apache.kafka.common.serialization.StringDeserializer

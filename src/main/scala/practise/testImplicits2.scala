@@ -1,4 +1,4 @@
-package main.scala.practise
+package practise
 
 import java.util.Date
 

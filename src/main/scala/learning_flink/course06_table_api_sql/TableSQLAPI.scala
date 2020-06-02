@@ -1,4 +1,4 @@
-package main.scala.learning_flink.course06_table_api_sql
+package learning_flink.course06_table_api_sql
 
 import org.apache.flink.api.scala.ExecutionEnvironment
 import org.apache.flink.table.api.Table

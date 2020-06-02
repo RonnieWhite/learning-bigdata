@@ -1,6 +1,4 @@
-package main.scala.practise
-
-import scala.util.Random
+package practise
 
 object demo1 {
   def main(args: Array[String]): Unit = {

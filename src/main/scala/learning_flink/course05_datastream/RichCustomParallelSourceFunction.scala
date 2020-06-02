@@ -1,4 +1,4 @@
-package main.scala.learning_flink.course05_datastream
+package learning_flink.course05_datastream
 
 import org.apache.flink.streaming.api.functions.source.{RichParallelSourceFunction, SourceFunction}
 

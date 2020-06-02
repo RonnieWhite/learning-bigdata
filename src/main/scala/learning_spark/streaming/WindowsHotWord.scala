@@ -1,4 +1,4 @@
-package main.scala.learning_spark.streaming
+package learning_spark.streaming
 
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.{DStream, ReceiverInputDStream}

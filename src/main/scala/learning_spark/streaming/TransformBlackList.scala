@@ -1,4 +1,4 @@
-package main.scala.learning_spark.streaming
+package learning_spark.streaming
 
 import java.lang
 

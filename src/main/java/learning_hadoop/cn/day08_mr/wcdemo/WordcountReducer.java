@@ -1,4 +1,4 @@
-package main.java.learning_hadoop.cn.day08_mr.wcdemo;
+package learning_hadoop.cn.day08_mr.wcdemo;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
