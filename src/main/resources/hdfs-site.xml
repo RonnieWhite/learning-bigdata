@@ -19,7 +19,7 @@
 <configuration>
     <property>
       <name>dfs.namenode.secondary.http-address</name>
-      <value>myspark:50090</value>
+      <value>vm01:50090</value>
     </property>
     <property>
       <name>dfs.replication</name>
@@ -27,10 +27,14 @@
     </property>
     <property>
       <name>dfs.namenode.name.dir</name>
-      <value>file:/home/sparkuser/apps/hadoop-2.7.3/name</value>
+      <value>file:/root/apps/hadoop-2.7.3/name</value>
     </property>
     <property>
       <name>dfs.datanode.data.dir</name>
-      <value>file:/home/sparkuser/apps/hadoop-2.7.3/data</value>
+      <value>file:/root/apps/hadoop-2.7.3/data</value>
+    </property>
+    <property>
+      <name>dfs.http.address</name>
+      <value>vm01:9870</value>
     </property>
 </configuration>
