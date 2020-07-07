@@ -1,6 +1,6 @@
 package practise
 
-object testCurrying {
+object TestCurrying {
   def main(args: Array[String]): Unit = {
     println(runCurrying(1)(2))
   }

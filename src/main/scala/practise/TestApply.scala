@@ -1,6 +1,6 @@
 package practise
 
-object testApply {
+object TestApply {
   def main(args: Array[String]): Unit = {
     val unit = person()
     Array(1,3,5,7)

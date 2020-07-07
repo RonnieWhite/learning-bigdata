@@ -1,6 +1,6 @@
 package practise
 
-object testCase {
+object TestCase {
   def main(args: Array[String]): Unit = {
     println(dog("wangcai"))
 //    println(dog("wangcai").name)

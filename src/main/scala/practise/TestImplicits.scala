@@ -4,7 +4,7 @@ import java.io.File
 
 import scala.io.Source
 
-object testImplicits {
+object TestImplicits {
 
   class RichFile(val file: File) {
     def read() = {

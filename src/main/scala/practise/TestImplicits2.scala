@@ -2,7 +2,7 @@ package practise
 
 import java.util.Date
 
-object testImplicits2 {
+object TestImplicits2 {
 
   class myDate(val date: Date) {
     def printDate(): Unit = {
