@@ -1,4 +1,4 @@
-package com.white.learning_bigdata.practise_java.dataConstruct;
+package com.white.learning_bigdata.practise_java.data_construct;
 
 import org.junit.Test;
 
