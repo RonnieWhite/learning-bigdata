@@ -15,9 +15,7 @@ import java.io.File;
  */
 public class demo2 {
     public static void main(String[] args) {
-        String a = "123";
-        String b = "abc";
-        String s = StringUtils.join(new String[]{a, b}, File.separator);
-        System.out.println(s);
+        String property = System.getProperty("java.class.path");
+        System.out.println(property);
     }
 }

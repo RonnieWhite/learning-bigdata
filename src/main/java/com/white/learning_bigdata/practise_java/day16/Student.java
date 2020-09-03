@@ -29,4 +29,8 @@ public class Student {
     public String toString() {
         return this.name + "排名" + this.id;
     }
+
+    public String sayHello() {
+        return "hello";
+    }
 }

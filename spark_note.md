@@ -39,7 +39,7 @@
 *启用预写日志机制（WAL Write Ahead Log）*
    1) 调用StreamingContext的checkpoint()方法设置一个checkpoint目录，
    2) 然后需要将Spark.streaming.receiver.writeAheadLog.enable参数设置为true
-   这种极强的可靠性机制会导致Receiver的吞吐量大幅下降，因为单位时间内有相当一部分时间需呀将数据写入预写日志
+   这种极强的可靠性机制会导致Receiver的吞吐量大幅下降，因为单位时间内有相当一部分时间需要将数据写入预写日志
    如果又希望开启预写日志机制，确保数据零损失，又不希望影响系统的吞吐量，那么可以创建多个输入DStream，启动多个Receiver
    此外，在启动了预写日志机制后，推荐将复杂持久化机制禁用掉，因为所有数据已经保存在容错的文件系统中，不需要再复制机制进行
    持久化，保存一份副本了，只要将DStream的持久化机制设置一下即可：persist(StorageLevel.MEMORY_AND_DISK_SER)
