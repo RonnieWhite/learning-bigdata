@@ -1,6 +1,6 @@
 package com.white.learning_bigdata.practise_java.optional_demo;
 
-import com.white.learning_bigdata.practise_java.day16.Student;
+import com.white.learning_bigdata.practise_java.lesson.day16.Student;
 
 import java.util.Optional;
 
