@@ -1,4 +1,4 @@
-# learning_bigdata
+# learning-bigdata
 hadoop+spark+flink
 
 scala版本：2.11.12
