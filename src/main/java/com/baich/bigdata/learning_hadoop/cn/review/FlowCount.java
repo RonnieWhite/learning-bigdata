@@ -56,7 +56,5 @@ public class FlowCount {
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
         boolean res = job.waitForCompletion(true);
         System.out.println(res ? 0 : 1);
-
-
     }
 }
