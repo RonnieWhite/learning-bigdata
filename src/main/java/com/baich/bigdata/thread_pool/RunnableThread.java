@@ -11,7 +11,6 @@ package com.baich.bigdata.thread_pool;
  */
 public class RunnableThread implements Runnable {
     private int THREAD_NUM = 10;
-
     @Override
     public void run() {
         for (int i = 0; i < THREAD_NUM; i++) {

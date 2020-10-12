@@ -119,4 +119,22 @@
 *浮点型的两种类型*
     float double 分别表示32位、64位的浮点数
     
-###当前工程或模块引用其它模块的同包名下的文件时，不用import，直接使用
+*synchronized 的缺陷*
+    synchronized 是java中的一个关键字，也就是Java语言内置的特性
+    如果一个代码块被synchronized 修饰,如：synchronized(锁对象){}
+        或者
+    类方法被synchronized 修饰,如：private synchronized void method1(){} 
+    当一个线程获取了对应的锁，并执行该代码块时，其他线程便只能一直等待，等待获取锁的线程释放锁，
+    而这里获取锁的线程，释放锁只会有两种情况：
+        1）获取锁的线程执行完了该代码块，然后线程释放对锁的占有；
+        2）线程执行发生异常，此时JVM会让线程自动释放锁。
+    synchronized缺点：
+        1) 效率低
+            锁的释放情况少，只在程序正常执行完成和抛出异常时释放锁
+            试图获得锁是不能设置超时
+            不能中断一个正在试图获得锁的线程
+        2) 无法知道是否成功获取到锁
+        
+*Lock() 必须要用户去手动释放锁，如果没有主动释放锁，就有可能导致出现死锁现象。相比synchronized，其提供了更多的功能*
+    1) java.util.concurrent.locks.Lock是一个接口，由于要实现其方法才能使用，所以一般都用java.util.concurrent.locks.ReentrantLock
+    2) java.util.concurrent.locks.ReentrantReadWriteLock是可重入读写锁，用于实现读写锁分离。
