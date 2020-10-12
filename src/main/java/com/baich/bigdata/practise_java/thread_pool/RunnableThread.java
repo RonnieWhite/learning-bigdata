@@ -1,4 +1,4 @@
-package com.baich.bigdata.thread_pool;
+package com.baich.bigdata.practise_java.thread_pool;
 
 /**
  * Created By IDEA.

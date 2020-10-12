@@ -1,4 +1,4 @@
-package com.baich.bigdata.thread_pool;
+package com.baich.bigdata.practise_java.thread_pool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -17,6 +17,7 @@ public class MyThread {
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
+        Executors.newCachedThreadPool();
         for (int i = 0; i < POOL_NUM; i++) {
             RunnableThread thread = new RunnableThread();
             executorService.execute(thread);
