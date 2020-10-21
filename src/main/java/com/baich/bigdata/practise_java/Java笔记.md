@@ -138,6 +138,12 @@
 *Lock() 必须要用户去手动释放锁，如果没有主动释放锁，就有可能导致出现死锁现象。相比synchronized，其提供了更多的功能*
     1) java.util.concurrent.locks.Lock是一个接口，由于要实现其方法才能使用，所以一般都用java.util.concurrent.locks.ReentrantLock
     2) java.util.concurrent.locks.ReentrantReadWriteLock是可重入读写锁，用于实现读写锁分离。
+    *接口方法的使用*
+        lock() 获取锁，如果锁被其他线程获取，则进行等待
+        tryLock() 尝试获取锁，如果获取成功，则返回true，反之，则返回false
+        tryLock(long time, TimeUnit unit) 尝试获取锁，在拿不到锁时会等待一定时间，之后如果获取成功，则返回true，反之，则返回false
+        lockInterruptibly() 获取锁，如果线程在等待获取锁，则这个线程能够响应中断，即中断线程的等待状态。
+        unlock() 释放锁
     
 *创建线程池*
     1) 创建一个单线程化的线程池，只会用唯一的工作线程来执行任务，保证所有任务按指定顺序执行
