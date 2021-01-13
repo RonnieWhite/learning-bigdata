@@ -239,6 +239,11 @@
             <artifactId>flink-hadoop-fs</artifactId>
             <version>${flink.version}</version>
         </dependency>
+        <dependency>
+            <groupId>net.sf.jopt-simple</groupId>
+            <artifactId>jopt-simple</artifactId>
+            <version>5.0.4</version>
+        </dependency>
     </dependencies>
 
     <build>
