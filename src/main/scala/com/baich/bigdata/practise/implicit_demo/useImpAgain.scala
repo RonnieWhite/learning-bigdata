@@ -2,22 +2,18 @@ package com.baich.bigdata.practise.implicit_demo
 
 /**
   * Author: Chenghui Bai
-  * Date: 2021/1/4 15:29
+  * Date: 2021/1/14 11:51
   * ProjectName: learning-bigdata
   * PackageName: com.baich.bigdata.practise.implicit_demo
-  * ClassName: RunClass
+  * ClassName: useImpAgain
   * Version:
   * Description:
   */
-object RunClass {
+object useImpAgain {
   def main(args: Array[String]): Unit = {
 
+    import RunClass._
     foo(100)
-  }
-
-  def foo(msg: Int) = {
-    import Implicits._
-    print(msg)
   }
 
 }

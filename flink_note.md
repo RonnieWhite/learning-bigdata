@@ -26,7 +26,7 @@
 *指定转换函数*
     1) 直接new一个FlatMapFunction并重载flatMap方法，text.flatMap(new FlatMapFunction<String, WC>() {}
     2) 定义一个类实现FlatMapFunction接口并重载flatMap方法（myFlatMapFunction为实现类），text.flatMap(new myFlatMapFunction())
-    3） jdk8的匿名函数方法
+    3) jdk8的匿名函数方法
     4) Rich functions text.flatMap(new RichFlatMapFunction<String, WC>() {}
 
 *flink支持的数据类型*
