@@ -1,15 +1,45 @@
 *netcat命令*
     windows: nc -l -p 9999
     linux: nc -l -k 9999
+	
+*运行示例作业*
+	flink run ../examples/streaming/SocketWindowWordCount.jar --port 9999
+	flink run ../examples/streaming/WordCount.jar --input ../xxx.csv
+	
+*Flink的优势*
+	状态容错：精确一次保证，分布式快照（Distributed Snapshot）
+	可应付极大的状态量（TB+scale）：out-of-core状态后端，asynchronous快照
+	状态迁移：在应用重新平行化/更动应用代码的状况下仍能恢复历史状态
+	Event-time处理：用以定义合适接收完毕所需数据
 
 *批处理使用DataSet API*
 *流处理使用DataStream API*
+
+*指定Flink作业的运行模式*
+	bin/flink run -Dexecution.runtime-mode=BATCH examples/streaming/WordCount.jar
+	或者在代码中指定：
+		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+		env.setRuntimeMode(RuntimeExecutionMode.BATCH);
 
 *大数据处理的流程*
     MapReduce: input -> map(reduce) -> output
     Storm: input -> Spout/Bolt -> output
     Spark: input -> transformation/action -> output
     Flink: input -> transformation/sink -> output
+
+*Flink在算子之前交换数据时还支持的其它物理分组方式*
+	datastream.global(); 上游算子将所有记录发送给下游算子的第一个实例
+	datastream.broadcast(); 上游算子将每一条记录发送给下游算子的所有实例
+	datastream.forward(); 只适用于上游算子实例数与下游算子相同时，每个上游算子实例将记录发送给下游算子对应的实例
+	datastream.shuffle(); 上游算子对每条记录随机选择一个下游算子进行发送
+	datastream.rebalance(); 上游算子通过轮询的方式发送数据
+	datastream.rescale(); 当上游和下游算子的实例数为 n 或 m 时，如果 n < m，则每个上游实例向ceil(m/n)或floor(m/n)个下游实例轮询发送数据；如果 n > m，则 floor(n/m) 或 ceil(n/m) 个上游实例向下游实例轮询发送数据。
+	datastream.partitionCustom(new Partitioner<>())：当上述内置分配方式不满足需求时，还可以选择自定义分组方式。
+
+*Flink中的状态*
+	算子状态（Operator State）
+	键控状态（Keyed State）
+	状态后端（State Backends）
 
 *Flink编程模型*
     1) 获取执行环境
@@ -60,6 +90,9 @@
            -- open/close 生命周期方法
            -- invoke 每条记录执行一次
 
+*窗口Window主要分为两大类*
+    -- 基于时间 TimeWindow
+    -- 基于数量 CountWindow
 *Time Windows编程*
     1) 处理时间类型
         -- 事件时间 Event Time 生产常用，取的是数据自身带的时间戳
@@ -81,9 +114,11 @@
        窗口方法：
            reduce -- 流式，有一个计算一个
            process -- 批量，等本批次数据到齐后计算一次
-    4) 窗口Windows主要分为两大类：
-        -- 基于时间 TimeWindow
-        -- 基于数量 CountWindow
+		   
+	   窗口函数：
+	       增量聚合函数：每条数据到来就进行计算，保持一个简单的状态：ReduceFunction, AggregateFunction
+		   全窗口函数：先把窗口所有数据收集起来，等到计算的时候会遍历所有数据：ProcessWindowFunction, WindowFunction
+
     5) 生成watermark的方法：
         -- 在source中，直接生成watermark，由source生成的watermark优先级比较低，可以被另一个方法产生的watermark覆盖掉
         -- 通过时间戳分配器(timestamp assigner)来生成水印(watermark)。
@@ -144,3 +179,12 @@
     3) Metrics
     4) 常用优化
 
+*客户端操作*
+	bin/flink --help 显示flink客户端命令的帮助
+	bin/flink list 查看任务列表	
+	bin/flink stop -m 127.0.0.1:8081 d67420e52bd051fae2fddbaa79e046bb 通过 -m 来指定要停止的 JobManager 的主机地址和端口
+	bin/flink cancel -m 127.0.0.1:8081 5e20cb6b0f357591171dfcca2eea09de 取消任务
+	bin/flink cancel -m 127.0.0.1:8081 -s /tmp/savepoint 29da945b99dea6547c3fbafd57ed8759 取消任务，并显示指定 Savepoint 目录
+	bin/flink savepoint -m 127.0.0.1:8081 ec53edcfaeb96b2a5dadbfbe5ff62bbb /tmp/savepoint 触发savepoint
+	bin/flink run -h 作业运行帮助
+	
