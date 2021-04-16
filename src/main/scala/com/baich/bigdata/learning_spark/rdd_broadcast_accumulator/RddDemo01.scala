@@ -4,7 +4,7 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.util.LongAccumulator
 import org.apache.spark.{SparkConf, SparkContext, broadcast}
 
-object RDDDemo01 {
+object RddDemo01 {
   def main(args: Array[String]): Unit = {
     val conf: SparkConf = new SparkConf().setAppName("Demo01").setMaster("local")
     val sc = new SparkContext(conf)

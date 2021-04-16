@@ -27,6 +27,7 @@ object StreamDemo01 {
     val wordCounts = words.groupBy("value").count()
     val query = wordCounts.writeStream
       .outputMode("complete")
+      // can be "orc", "json", "csv", "kafka","console", "memory" etc.
       .format("console")
       .start()
     query.awaitTermination()
