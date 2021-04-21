@@ -26,8 +26,11 @@
 1. 定义：val y = (x: Int) => x + 1
 2. 调用： y(10) 或 y.apply(10)
 
-*柯理化*
-    柯理化函数(Curried Function) 把具有多个参数的函数转换为一条函数链，每个节点上是单一参数。
+*柯里化*
+    柯里化函数(Curried Function) 把具有多个参数的函数转换为一条函数链，每个节点上是单一参数。
+
+*继承和实现*
+    与Java不同，Scala没有interface，取而代之的是trait，且当一个子类继承父类或实现特征时，都用extend关键字（Java实现时用implement）
 
 *class、object和case class、case object*
 1. scala不能定义静态成员，所以用定义的单例对象代之（object）
