@@ -11,5 +11,3 @@ kafka版本：kafka_2.11-1.0.1
 
 已改用maven
 src/main/java/和src/main/scala/为sources root，分别放java、scala的代码。
-
-
