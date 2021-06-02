@@ -93,3 +93,9 @@
 	    相当于做了一步数据合并后再发送给spark，故spark可以设置executor个数去消费这部分数据，效率相对慢些
 	-- Direct模式，又称kafka低级API模式：简单的理解就是spark直接从kafka底层中的partition直接获取消息，相对于Receiver模式少了一步，
 	    效率更快，但是这样一来spark中的executor的工作的个数就与kafka中partition一致。设置再多的executor都不工作，同时偏移量也需要自己维护
+
+*Spark Input source format*
+    -- File source - Reads files written in a directory as a stream of data. Supported file formats are text, csv, json, orc, parquet. See the docs of the DataStreamReader interface for a more up-to-date list, and supported options for each file format. Note that the files must be atomically placed in the given directory, which in most file systems, can be achieved by file move operations.
+    -- Kafka source - Reads data from Kafka. It’s compatible with Kafka broker versions 0.10.0 or higher. See the Kafka Integration Guide for more details.
+    -- Socket source (for testing) - Reads UTF8 text data from a socket connection. The listening server socket is at the driver. Note that this should be used only for testing as this does not provide end-to-end fault-tolerance guarantees.
+    -- Rate source (for testing) - Generates data at the specified number of rows per second, each output row contains a timestamp and value. Where timestamp is a Timestamp type containing the time of message dispatch, and value is of Long type containing the message count, starting from 0 as the first row. This source is intended for testing and benchmarking.
