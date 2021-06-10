@@ -1,3 +1,9 @@
+*Flink执行图*
+    StreamGraph: 在Client上生成最初的程序执行逻辑流程，也就是算子之间的前后顺序
+    JobGraph: 在Client上生成，将OneToOne的Operator合并为OperatorChain
+    ExecutionGraph: 在JobManager上生成，将JobGraph根据代码中设置的并行度和请求的资源进行并行化规划
+    物理执行图: 将ExecutionGraph的并行计划，落实到具体的TaskManager上，将具体的SubTask落实到具体的TaskSlot内进行运行
+
 *netcat命令*
     windows: nc -l -p 9999
     linux: nc -l -k 9999
