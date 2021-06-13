@@ -55,6 +55,7 @@ public class HdfsClientDemo {
             Entry<String, String> entry = iterator.next();
             System.out.println(entry.getValue() + "---" + entry.getKey()); // conf加载的内容
         }
+
     }
 
     /**

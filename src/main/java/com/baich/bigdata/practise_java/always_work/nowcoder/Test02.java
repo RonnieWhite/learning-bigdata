@@ -1,4 +1,4 @@
-package com.baich.bigdata.practise_java.always_work;
+package com.baich.bigdata.practise_java.always_work.nowcoder;
 
 import java.util.Arrays;
 import java.util.HashSet;
