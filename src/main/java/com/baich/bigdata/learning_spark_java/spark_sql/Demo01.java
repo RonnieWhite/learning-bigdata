@@ -10,6 +10,7 @@ public class Demo01 {
         SparkConf conf = new SparkConf();
         conf.setAppName("demo01").setMaster("local[4]");
         SparkSession spark = SparkSession.builder().config(conf).getOrCreate();
-        Dataset<Row> ds = spark.read().json("");
+        Dataset<Row> ds = spark.read().json("file:///D:/data/abc.json");
+        ds.show();
     }
 }
