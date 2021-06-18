@@ -21,6 +21,5 @@ public class Test11 {
             sb.append(str.charAt(i));
         }
         System.out.println(sb.toString());
-
     }
 }

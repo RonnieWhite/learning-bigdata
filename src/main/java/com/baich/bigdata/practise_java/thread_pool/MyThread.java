@@ -17,7 +17,7 @@ public class MyThread {
 
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(5);
-        Executors.newCachedThreadPool();
+//        Executors.newCachedThreadPool();
         for (int i = 0; i < POOL_NUM; i++) {
             RunnableThread thread = new RunnableThread();
             executorService.execute(thread);
