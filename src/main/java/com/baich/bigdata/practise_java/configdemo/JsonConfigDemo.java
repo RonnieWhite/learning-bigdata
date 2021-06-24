@@ -12,7 +12,7 @@ import java.io.InputStream;
  * version : v1.0
  */
 public class JsonConfigDemo {
-    private static final String configFileName = "demo.json";
+    private static final String configFileName = "application.json";
     public static void main(String[] args) {
 
         InputStream stream = JsonConfigDemo.class.getClassLoader().getResourceAsStream(configFileName);

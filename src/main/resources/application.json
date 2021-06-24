@@ -1,0 +1,10 @@
+{
+  "key01": "value01",
+  "key02": "value02",
+  "mysqlConfig": {
+    "host": "192.168.10.128",
+    "port": "3306",
+    "password": "123456",
+    "database": "ods"
+  }
+}
