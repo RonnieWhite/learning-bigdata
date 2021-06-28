@@ -1,6 +1,7 @@
 package com.baich.bigdata.practise_java.always_work.nowcoder;
 
-import java.util.Scanner;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  * 输入一个int型的正整数，计算出该int型数据在内存中存储时1的个数。
@@ -19,8 +20,22 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        String property = System.getProperty("user.dir");
-        System.out.println(property);
+
     }
+
+    class Subject extends Observable{
+
+    }
+
+    class Observer1 implements Observer {
+
+        @Override
+        public void update(Observable o, Object arg) {
+            System.out.println("ok");
+        }
+    }
+
+
+
 }
 
