@@ -1,9 +1,6 @@
 package com.baich.bigdata.practise_java.thread_demo;
 
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-
 /**
  * Created By IDEA.
  * Author : BaiCH

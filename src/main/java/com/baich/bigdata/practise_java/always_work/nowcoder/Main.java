@@ -1,41 +1,56 @@
 package com.baich.bigdata.practise_java.always_work.nowcoder;
 
-import java.util.Observable;
-import java.util.Observer;
-
 /**
- * 输入一个int型的正整数，计算出该int型数据在内存中存储时1的个数。
- * 描述
- * 密码要求:
- * <p>
- * 1.长度超过8位
- * 2.包括大小写字母.数字.其它符号,以上四种至少三种
- * 3.不能有相同长度大于2的子串重复
- * <p>
- * 输入描述：
- * 一组或多组长度超过2的字符串。每组占一行
- * <p>
- * 输出描述：
- * 如果符合要求输出：OK，否则输出NG
  */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+/*        Class<?> aClass = null;
+        try {
+            aClass = Class.forName("com.baich.Abc");
+        } catch (ClassNotFoundException e) {
+            //e.printStackTrace();
+            System.out.println(e.toString());
+//            System.exit(-1);
+        }
+        System.out.println(aClass);*/
+/*        Hello hello = new Hello();
+        hello.calc();
+        System.out.println("hello");
+        System.out.println("exit");*/
+        System.out.println("ok");
 
     }
 
-    class Subject extends Observable{
-
-    }
-
-    class Observer1 implements Observer {
-
-        @Override
-        public void update(Observable o, Object arg) {
-            System.out.println("ok");
+    static class Hello {
+        private void calc() {
+            Thread a = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    long j = 0;
+                    for (int i = 0; i < Integer.MAX_VALUE; i++) {
+                        try {
+                            Thread.sleep(1);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        j += i;
+                    }
+                    try {
+                        Thread.sleep(10000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(j);
+                }
+            });
+            a.start();
+            System.out.println("hello exit");
+            try {
+                //a.join();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
-
-
-
 }
 

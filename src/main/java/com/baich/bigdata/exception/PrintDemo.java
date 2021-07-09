@@ -1,6 +1,5 @@
 package com.baich.bigdata.exception;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 

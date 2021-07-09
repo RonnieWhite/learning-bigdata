@@ -12,11 +12,11 @@ import java.util.concurrent.Executors;
  * Modified By:
  * version : v1.0
  */
-public class MyThread {
+public class MyThreadPool01 {
     private static int POOL_NUM = 10;
 
     public static void main(String[] args) {
-        ExecutorService executorService = Executors.newFixedThreadPool(5);
+        ExecutorService executorService = Executors.newFixedThreadPool(POOL_NUM);
 //        Executors.newCachedThreadPool();
         for (int i = 0; i < POOL_NUM; i++) {
             RunnableThread thread = new RunnableThread();
