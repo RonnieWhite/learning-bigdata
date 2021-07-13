@@ -13,12 +13,9 @@ public class Main {
 //            System.exit(-1);
         }
         System.out.println(aClass);*/
-/*        Hello hello = new Hello();
+        Hello hello = new Hello();
         hello.calc();
-        System.out.println("hello");
-        System.out.println("exit");*/
-        System.out.println("ok");
-
+        System.out.println("exit");
     }
 
     static class Hello {
