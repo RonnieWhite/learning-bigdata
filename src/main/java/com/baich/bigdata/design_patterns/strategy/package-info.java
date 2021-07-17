@@ -7,4 +7,4 @@
  * Modified By:
  * version : v1.0
  */
-package com.baich.bigdata.design_patterns.duck;
+package com.baich.bigdata.design_patterns.strategy;

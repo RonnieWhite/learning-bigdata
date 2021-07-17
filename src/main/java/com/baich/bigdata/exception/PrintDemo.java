@@ -15,7 +15,7 @@ import java.io.PrintStream;
 public class PrintDemo {
     public static void main(String[] args) {
         try {
-            Class.forName("com.baich.bigdata.design_patterns.duck.Duck");
+            Class.forName("com.baich.bigdata.design_patterns.strategy.Duck");
         } catch (ClassNotFoundException e) {
             // 直接打印到控制台
             e.printStackTrace();

@@ -1,7 +1,7 @@
-package com.baich.bigdata.design_patterns.duck;
+package com.baich.bigdata.design_patterns.strategy;
 
-import com.baich.bigdata.design_patterns.duck.fly.impl.FlyWithWings;
-import com.baich.bigdata.design_patterns.duck.quack.impl.Quack;
+import com.baich.bigdata.design_patterns.strategy.fly.impl.FlyWithWings;
+import com.baich.bigdata.design_patterns.strategy.quack.impl.Quack;
 
 /**
  * Created By IDEA.

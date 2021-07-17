@@ -1,5 +1,9 @@
 package com.baich.bigdata.practise_java.always_work.nowcoder;
 
+import org.apache.flink.api.common.functions.RichFunction;
+
+import java.util.StringJoiner;
+
 /**
  */
 public class Main {
@@ -13,9 +17,13 @@ public class Main {
 //            System.exit(-1);
         }
         System.out.println(aClass);*/
-        Hello hello = new Hello();
+/*        Hello hello = new Hello();
         hello.calc();
-        System.out.println("exit");
+        System.out.println("exit");*/
+        StringJoiner stringJoiner = new StringJoiner(",");
+        stringJoiner.add("1");
+        stringJoiner.add("2");
+        System.out.println(stringJoiner.toString());
     }
 
     static class Hello {

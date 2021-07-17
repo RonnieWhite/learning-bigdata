@@ -1,7 +1,7 @@
-package com.baich.bigdata.design_patterns.duck;
+package com.baich.bigdata.design_patterns.strategy;
 
-import com.baich.bigdata.design_patterns.duck.fly.FlyBehavior;
-import com.baich.bigdata.design_patterns.duck.quack.QuackBehavior;
+import com.baich.bigdata.design_patterns.strategy.fly.FlyBehavior;
+import com.baich.bigdata.design_patterns.strategy.quack.QuackBehavior;
 
 /**
  * Created By IDEA.

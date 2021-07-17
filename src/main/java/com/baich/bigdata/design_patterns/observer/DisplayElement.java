@@ -1,4 +1,4 @@
-package com.baich.bigdata.design_patterns.weather;
+package com.baich.bigdata.design_patterns.observer;
 
 /**
  * Created By IDEA.

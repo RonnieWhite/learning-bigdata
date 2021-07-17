@@ -1,6 +1,6 @@
-package com.baich.bigdata.design_patterns.duck.quack.impl;
+package com.baich.bigdata.design_patterns.strategy.quack.impl;
 
-import com.baich.bigdata.design_patterns.duck.quack.QuackBehavior;
+import com.baich.bigdata.design_patterns.strategy.quack.QuackBehavior;
 
 /**
  * Created By IDEA.
