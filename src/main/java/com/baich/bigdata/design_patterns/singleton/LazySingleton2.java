@@ -5,21 +5,21 @@ package com.baich.bigdata.design_patterns.singleton;
  * Author : BaiCH
  * Date : Created in 2021-07-17
  * Time : 17:03
- * Description: 懒汉式
+ * Description: 懒汉式-直接在方法上进行同步，效率会降低
  * Modified By:
  * version : v1.0
  */
-public class LazySingleton {
-    private static volatile LazySingleton instance = null; // 保证instance在所有线程中同步
+public class LazySingleton2 {
+    private static volatile LazySingleton2 instance = null; // 保证instance在所有线程中同步
 
-    private LazySingleton() {
+    private LazySingleton2() {
         // private 避免类在外部被实例化
     }
 
-    public static synchronized LazySingleton getInstance() {
+    public static synchronized LazySingleton2 getInstance() {
         // getInstance 方法前同步
         if (instance == null) {
-            instance = new LazySingleton();
+            return new LazySingleton2();
         }
         return instance;
     }
