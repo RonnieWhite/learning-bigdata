@@ -9,5 +9,10 @@ package com.baich.bigdata.review;
  * Modified By:
  * version : v1.0
  */
-public class Banana {
+public class Banana implements Showable {
+
+    @Override
+    public void show() {
+        System.out.println("I'm a banana...");
+    }
 }

@@ -10,4 +10,20 @@ package com.baich.bigdata.review;
  * version : v1.0
  */
 public class Singleton {
+    private static Singleton instance = null;
+
+    private Singleton() {
+
+    }
+
+    public static Singleton getInstance() {
+        synchronized (Singleton.class) {
+            if (instance == null) {
+                return new Singleton();
+            }
+            return instance;
+        }
+    }
+
+
 }

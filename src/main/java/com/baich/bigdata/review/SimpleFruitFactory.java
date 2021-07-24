@@ -10,4 +10,20 @@ package com.baich.bigdata.review;
  * version : v1.0
  */
 public class SimpleFruitFactory {
+    private String type;
+
+    public SimpleFruitFactory(String type) {
+        this.type = type;
+    }
+
+    public Showable create() {
+        switch (type) {
+            case "Apple":
+                return new Apple();
+            case "Banana":
+                return new Banana();
+            default:
+                return null;
+        }
+    }
 }

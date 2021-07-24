@@ -9,5 +9,8 @@ package com.baich.bigdata.review;
  * Modified By:
  * version : v1.0
  */
-public class Apple {
+public class Apple implements Showable {
+    public void show() {
+        System.out.println("I'm an apple...");
+    }
 }

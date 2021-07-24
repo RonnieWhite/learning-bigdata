@@ -1,4 +1,4 @@
-package com.baich.bigdata.practise_java.net;
+package com.baich.bigdata.utils;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -44,7 +44,7 @@ public class RequestUtils {
     }
 
     public static String doPost(String url, String param) {
-        return doRequest(url,RequestMethod.POST,param);
+        return doRequest(url, RequestMethod.POST,param);
     }
 
     public static String doPost(String url, Map<String, Object> param) throws Exception{
@@ -89,6 +89,7 @@ public class RequestUtils {
             conn.setDoOutput(true);
             conn.setRequestMethod(method.name());
             conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
+//            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         }
 
         private void genReqBody(String strParam) throws Exception {

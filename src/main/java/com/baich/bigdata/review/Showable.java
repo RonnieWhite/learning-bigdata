@@ -10,4 +10,5 @@ package com.baich.bigdata.review;
  * version : v1.0
  */
 public interface Showable {
+    public void show();
 }
