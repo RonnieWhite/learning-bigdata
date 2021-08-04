@@ -1,6 +1,7 @@
 package com.baich.bigdata.learning_flink_java.project;
 
 import org.apache.flink.api.common.typeutils.base.StringSerializer;
+import org.apache.kafka.clients.producer.KafkaProducer;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,7 +16,7 @@ public class PKKafkaProducer {
         // 序列化
         properties.setProperty("key.serializer", StringSerializer.class.getName());
         properties.setProperty("value.serializer", StringSerializer.class.getName());
-//        KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
+        KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
         String topic = "test";
         // 通过死循环一直不停的往kafka的Broker里面生产数据
         while (true) {
