@@ -16,15 +16,9 @@ import java.nio.channels.FileChannel;
  */
 public class Entry {
     public static void main(String[] args) throws IOException {
-        RandomAccessFile file = new RandomAccessFile("D:/data/data.txt", "r");
+        RandomAccessFile file = new RandomAccessFile("D:/data/out.txt", "rw");
         FileChannel channel = file.getChannel();
-        ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
-        while (channel.read(byteBuffer) != -1) {
-            byteBuffer.flip();
-            while (byteBuffer.hasRemaining())
-                System.out.println((char) byteBuffer.get());
-            byteBuffer.compact();
-        }
+        channel.write(ByteBuffer.wrap("Hello".getBytes()));
         channel.close();
         file.close();
     }
