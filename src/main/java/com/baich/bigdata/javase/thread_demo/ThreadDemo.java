@@ -1,4 +1,4 @@
-package com.baich.bigdata.javase.nio;
+package com.baich.bigdata.javase.thread_demo;
 
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -8,22 +8,23 @@ import java.nio.channels.FileChannel;
 /**
  * Created By IDEA.
  * Author : BaiCH
- * Date : Created in 2021-08-10
- * Time : 14:47
+ * Date : Created in 2021-08-12
+ * Time : 20:34
  * Description:
  * Modified By:
  * version : v1.0
  */
-public class ReadFile {
+public class ThreadDemo {
     public static void main(String[] args) throws IOException {
         RandomAccessFile file = new RandomAccessFile("D:/data/data.txt", "r");
         FileChannel channel = file.getChannel();
-        ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
-        while (channel.read(byteBuffer) != -1) {
-            byteBuffer.flip();
-            while (byteBuffer.hasRemaining())
-                System.out.print((char) byteBuffer.get());
-            byteBuffer.compact();
+        ByteBuffer allocate = ByteBuffer.allocate(1024);
+        while (channel.read(allocate) != -1) {
+            allocate.flip();
+            while (allocate.hasRemaining()) {
+                System.out.print((char) allocate.get());
+            }
+            allocate.compact();
         }
         channel.close();
         file.close();

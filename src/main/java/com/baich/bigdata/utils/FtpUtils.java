@@ -29,6 +29,6 @@ public class FtpUtils {
         ftpClient.login(user, password.toCharArray());
         ftpClient.enablePassiveMode(true);
         InputStream inputStream = new FileInputStream(new File(localPath.concat(fileName)));
-        ftpClient.putFile(targetPath.concat(fileName), inputStream);
+        ftpClient.putFile(targetPath.concat(fileName), inputStream,true);
     }
 }
