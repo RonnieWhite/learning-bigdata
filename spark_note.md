@@ -87,7 +87,17 @@
            SparkSession spark = SparkSession.builder().config(conf).enableHiveSupport().getOrCreate();
            // 查询hive表数据
            spark.sql("SELECT * FROM ods_weblog_origin").show();
-		   
+	或者直接在程序中通过config的方式指定namenode，metastore uri等信息：
+```java
+	        SparkSession spark = SparkSession.builder().appName("JavaSparkReadHive").master("local")
+                    .config("hive.exec.dynamic.partition.mode", "nonstrict")
+                    .config("hive.metastore.uris", "thrift://vm01:9083")
+                    .config("fs.defaultFS", "hdfs://vm01:9000")
+                    .enableHiveSupport()
+                    .getOrCreate();
+            spark.sql("SHOW DATABASES").show();
+            spark.close();
+```   
 *Spark Streaming消费kafka的两种模式*
     -- Receiver模式，又称kafka高级api模式：简单理解就是kafka把消息全部封装好，提供给spark去调用，本来kafka的消息分布在不同的partition上，
 	    相当于做了一步数据合并后再发送给spark，故spark可以设置executor个数去消费这部分数据，效率相对慢些

@@ -4,6 +4,8 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.sql.SparkSession;
 
 public class JavaSparkSQLHive {
+    private static final String defaultFSStr = "vm01:9000,vm02:9000,vm03:9000";
+    private static final String splitter = ",";
     public static void main(String[] args) throws Exception {
         SparkConf conf = new SparkConf().setAppName("spark-hive").setMaster("local[2]").set("catalogImplementation", "in-memory");
         SparkSession spark = SparkSession.builder().config(conf).enableHiveSupport().getOrCreate();
