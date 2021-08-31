@@ -19,7 +19,8 @@ public class JavaSparkReadHive {
     private static final String splitter = ",";
 
     public static void main(String[] args) {
-        SparkConf conf = new SparkConf();
+        // 进行spark的相关配置
+        SparkConf conf = new SparkConf().setAppName("JavaSparkReadHive").setMaster("local");
         conf.set("fs.defaultFS", "hdfs://hdfsCluster");
         conf.set("dfs.nameservices", "hdfsCluster");
         StringJoiner hostJoiner = new StringJoiner(splitter);
@@ -31,11 +32,12 @@ public class JavaSparkReadHive {
         conf.set("dfs.ha.namenodes.hdfsCluster", hostJoiner.toString());
         conf.set("dfs.client.failover.proxy.provider.hdfsCluster", "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider");
 
-        SparkSession spark = SparkSession.builder().appName("JavaSparkReadHive").master("local")
-                .config("hive.exec.dynamic.partition.mode", "nonstrict")
-                .config("hive.metastore.uris", "thrift://vm01:9083")
+        // 获取hive连接配置
+        conf.set("hive.exec.dynamic.partition.mode", "nonstrict");
+        conf.set("hive.metastore.uris", "thrift://vm01:9083");
+
+        SparkSession spark = SparkSession.builder()
                 .config(conf)
-//                .config("fs.defaultFS", "hdfs://vm01:9000")
                 .enableHiveSupport()
                 .getOrCreate();
         spark.sql("SHOW DATABASES").show();

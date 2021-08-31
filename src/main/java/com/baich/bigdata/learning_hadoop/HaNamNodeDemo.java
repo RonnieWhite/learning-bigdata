@@ -23,6 +23,7 @@ public class HaNamNodeDemo {
     private static final String splitter = ",";
 
     public static void main(String[] args) throws IOException {
+        // 进行hadoop的相关配置
         Configuration conf = new Configuration();
         conf.set("fs.defaultFS", "hdfs://hdfsCluster");
         conf.set("dfs.nameservices", "hdfsCluster");
@@ -34,12 +35,13 @@ public class HaNamNodeDemo {
         }
         conf.set("dfs.ha.namenodes.hdfsCluster", hostJoiner.toString());
         conf.set("dfs.client.failover.proxy.provider.hdfsCluster", "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider");
+
+        // 列出HDFS /user 目录下的文件并打印
         FileSystem fs = FileSystem.get(conf);
         RemoteIterator<LocatedFileStatus> files = fs.listFiles(new Path("/user"), false);
         while (files.hasNext()) {
             System.out.println(files.next().getPath());
         }
         fs.close();
-
     }
 }

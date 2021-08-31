@@ -11,7 +11,7 @@ package com.baich.bigdata.design_patterns.singleton;
  */
 public class LazySingleton5 {
     private static class SingletonHolder {
-        public static LazySingleton5 instance = new LazySingleton5();
+        private static LazySingleton5 instance = new LazySingleton5();
     }
 
     private LazySingleton5() {
