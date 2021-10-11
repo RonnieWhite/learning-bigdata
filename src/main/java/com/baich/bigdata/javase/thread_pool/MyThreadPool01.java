@@ -18,10 +18,12 @@ public class MyThreadPool01 {
     public static void main(String[] args) {
         ExecutorService executorService = Executors.newFixedThreadPool(POOL_NUM);
 //        Executors.newCachedThreadPool();
-        for (int i = 0; i < POOL_NUM; i++) {
-            RunnableThread thread = new RunnableThread();
+
+        for (int i = 0; i < 20; i++) {
+            String name = "xxx" + i;
+            RunnableThread thread = new RunnableThread(name);
             executorService.execute(thread);
-            executorService.shutdown();
         }
+        executorService.shutdown();
     }
 }

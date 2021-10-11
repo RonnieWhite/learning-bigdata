@@ -10,11 +10,17 @@ package com.baich.bigdata.javase.thread_pool;
  * version : v1.0
  */
 public class RunnableThread implements Runnable {
-    private int THREAD_NUM = 10;
+    private String xxx;
+
+    public RunnableThread(String xxx) {
+        this.xxx = xxx;
+    }
+
     @Override
     public void run() {
-        for (int i = 0; i < THREAD_NUM; i++) {
-            System.out.println("线程" + Thread.currentThread() + " " + i);
-        }
+        System.out.println("===========");
+        System.out.println(xxx);
+        System.out.println(Thread.currentThread().getName());
+        System.out.println("===========");
     }
 }

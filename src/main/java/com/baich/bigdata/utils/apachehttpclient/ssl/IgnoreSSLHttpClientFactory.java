@@ -9,8 +9,6 @@ import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.ssl.TrustStrategy;
 
 import javax.net.ssl.SSLContext;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
