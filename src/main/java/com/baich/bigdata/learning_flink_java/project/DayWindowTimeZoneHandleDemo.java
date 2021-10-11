@@ -35,6 +35,5 @@ public class DayWindowTimeZoneHandleDemo {
                 .sum(1)
                 .print();
         env.execute("DayWindowTimeZoneHandleDemo");
-
     }
 }
