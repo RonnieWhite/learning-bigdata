@@ -4,6 +4,8 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 public class test {
@@ -13,5 +15,7 @@ public class test {
         JavaRDD<String> rdd = spark.textFile("hdfs://vm01:9000/data");
         List<String> collect = rdd.collect();
         System.out.println(collect);
+        HashMap
+
     }
 }
