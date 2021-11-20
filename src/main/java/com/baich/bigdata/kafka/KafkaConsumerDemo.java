@@ -27,12 +27,12 @@ public class KafkaConsumerDemo {
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "test01");
         KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
-//        consumer.subscribe(Arrays.asList("test1"));
+/*//        consumer.subscribe(Arrays.asList("test1"));
         consumer.assign(Arrays.asList(new TopicPartition("test1", 0)));
         // 手动指定从分区0 offset为47的记录开始消费
         consumer.seek(new TopicPartition("test1", 0), 47);
         // 指定从分区0的起始位置开始消费
-        consumer.seekToBeginning(Arrays.asList(new TopicPartition("test1", 0)));
+        consumer.seekToBeginning(Arrays.asList(new TopicPartition("test1", 0)));*/
         while (true) {
             ConsumerRecords<String, String> records = consumer.poll(1000);
             for (ConsumerRecord<String, String> record : records) {
