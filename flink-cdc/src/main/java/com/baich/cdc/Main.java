@@ -30,9 +30,9 @@ public class Main {
                 .deserializer(new StringDebeziumDeserializationSchema()) // converts SourceRecord to String
                 .build();
 
-
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
+        env.enableCheckpointing(5000);
         env
                 .addSource(sourceFunction)
                 .print().setParallelism(1); // use parallelism 1 for sink to keep message ordering
