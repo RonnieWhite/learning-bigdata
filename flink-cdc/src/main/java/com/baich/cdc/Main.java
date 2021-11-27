@@ -6,6 +6,8 @@ package com.baich.cdc;
 
 import com.alibaba.ververica.cdc.connectors.mysql.MySQLSource;
 import com.alibaba.ververica.cdc.debezium.StringDebeziumDeserializationSchema;
+import org.apache.flink.runtime.state.filesystem.FsStateBackend;
+import org.apache.flink.runtime.state.filesystem.FsStateBackendFactory;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.source.SourceFunction;
 
@@ -21,8 +23,8 @@ import org.apache.flink.streaming.api.functions.source.SourceFunction;
 public class Main {
     public static void main(String[] args) throws Exception {
         SourceFunction<String> sourceFunction = MySQLSource.<String>builder()
-                .hostname("192.168.10.130")
-                .port(3306)
+                .hostname("192.168.232.128")
+                .port(3407)
                 .databaseList("ods")// monitor all tables under ods database
 //                .tableList("t_test")
                 .username("root")
@@ -36,6 +38,8 @@ public class Main {
         env
                 .addSource(sourceFunction)
                 .print().setParallelism(1); // use parallelism 1 for sink to keep message ordering
+        env.setStateBackend(new FsStateBackend("file:///D:/data/flink-backend"));
+
         env.execute();
 
 

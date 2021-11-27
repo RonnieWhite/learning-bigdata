@@ -18,6 +18,5 @@ public class JavaKafkaProducer {
             producer.send(record);
             Thread.sleep(5000);
         }
-
     }
 }
