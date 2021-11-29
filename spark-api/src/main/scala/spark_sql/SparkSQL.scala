@@ -9,11 +9,11 @@ object SparkSQL {
     //    val sc: SparkContext = new SparkContext(conf)
     //    new SQLContext(sc)
     val session: SparkSession = SparkSession.builder().appName("sqlT").config(conf).getOrCreate()
-    val df: DataFrame = session.read.json("E:/data/spark/students.json")
+    val df: DataFrame = session.read.json("D:/data/abc.json")
     // 全表打印显示
     //    df.show()
     // 元数据（schema）
-//    df.printSchema()
+    //    df.printSchema()
     // 查询,选择列
     df.select("name").show()
     session.close()

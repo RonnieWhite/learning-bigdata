@@ -1,4 +1,4 @@
-package com.baich.javase.thread_demo;
+package com.baich.javase.thread_demo.ticket_demo;
 
 /**
  * Created By IDEA.
