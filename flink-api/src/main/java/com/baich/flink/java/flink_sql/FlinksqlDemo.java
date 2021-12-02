@@ -1,15 +1,15 @@
 package com.baich.flink.java.flink_sql;
 
 import com.baich.flink.java.watermark.Order;
+import org.apache.flink.api.common.typeinfo.TypeInformation;
+import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.streaming.api.functions.ProcessFunction;
 import org.apache.flink.table.api.EnvironmentSettings;
 import org.apache.flink.table.api.Table;
-import org.apache.flink.table.api.TableResult;
 import org.apache.flink.table.api.bridge.java.StreamTableEnvironment;
 import org.apache.flink.types.Row;
-import org.apache.flink.util.CloseableIterator;
 import org.apache.flink.util.Collector;
 
 import java.sql.Connection;
@@ -43,13 +43,16 @@ public class FlinksqlDemo {
                 });
         Table table = tableEnv.fromDataStream(orderStream);
         tableEnv.createTemporaryView("t_order", table);
-        TableResult tableResult = tableEnv.executeSql("select orderId,sum(money) as total from t_order group by orderId");
+        Table tableResult = tableEnv.sqlQuery("select orderId,sum(money) as total from t_order group by orderId");
+/*        TableResult tableResult = tableEnv.sqlQuery("select orderId,sum(money) as total from t_order group by orderId");
         CloseableIterator<Row> collect = tableResult.collect();
         while (collect.hasNext()) {
             String orderId = (String) collect.next().getField("orderId");
             int total = (Integer) collect.next().getField("total");
             insertData(orderId, total);
-        }
+        }*/
+        DataStream<Row> rowDataStream = tableEnv.toAppendStream(tableResult, TypeInformation.of(Row.class));
+        rowDataStream.map(row -> row.getField("orderId").toString().concat(",").concat(row.getField("total").toString())).print();
         env.execute("FlinksqlDemo");
     }
 
