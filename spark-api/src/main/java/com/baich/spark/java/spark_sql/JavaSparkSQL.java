@@ -11,7 +11,7 @@ public class JavaSparkSQL {
         SparkConf conf = new SparkConf().setAppName("DataFrameCreate").setMaster("local");
         JavaSparkContext sc = new JavaSparkContext(conf);
         SQLContext sqlContext = new SQLContext(sc);
-        Dataset<Row> students = sqlContext.read().json("E:/data/spark/students.json");
+        Dataset<Row> students = sqlContext.read().json("C:/data/students.json");
         students.show();
     }
 

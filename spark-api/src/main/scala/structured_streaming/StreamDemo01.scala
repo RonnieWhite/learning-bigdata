@@ -10,7 +10,7 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
   * PackageName: com.baich.bigdata.learning_spark.structured_streaming
   * ClassName: StreamDemo01
   * Version:
-  * Description:
+  * Description: 连接指定spark url
   */
 object StreamDemo01 {
   def main(args: Array[String]): Unit = {

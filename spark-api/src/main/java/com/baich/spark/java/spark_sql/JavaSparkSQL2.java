@@ -11,7 +11,7 @@ public class JavaSparkSQL2 {
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setAppName("jss").setMaster("local");
         SparkSession session = SparkSession.builder().config(conf).getOrCreate();
-        Dataset<Row> students = session.read().json("E:/data/spark/students.json");
+        Dataset<Row> students = session.read().json("C:/data/students.json");
         // 显示全表
 //        students.show();
         // 打印元数据

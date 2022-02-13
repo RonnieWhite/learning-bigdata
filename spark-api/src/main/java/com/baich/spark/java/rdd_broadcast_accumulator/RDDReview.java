@@ -17,7 +17,7 @@ public class RDDReview {
         JavaRDD<String> textFile = sc.textFile(filePath);
         JavaPairRDD<String, Integer> reduce = textFile.flatMap(line -> Arrays.asList(line.split(" ")).iterator())
                 .mapToPair(word -> new Tuple2<>(word, 1))
-                .reduceByKey((a, b) -> a + b);
+                .reduceByKey(Integer::sum);
         List<Tuple2<String, Integer>> collect = reduce.collect();
         System.out.println(collect);
     }
