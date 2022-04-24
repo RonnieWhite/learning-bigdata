@@ -1,7 +1,6 @@
 package com.baich.javase.my_annotation;
 
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Method;
+import com.baich.javase.review.AnnotationDemo01;
 
 /**
  * Created By IDEA.
@@ -13,7 +12,8 @@ import java.lang.reflect.Method;
  * version : v1.0
  */
 @MyAnTargetType
-public class testDemo {
+@AnnotationDemo01
+public class TestDemo {
     @MyAnTargetField
     private String field = "This is a field";
 
@@ -24,12 +24,12 @@ public class testDemo {
 
 
     public static void main(String[] args) {
-        // 获取类上的注解MyAnTargetType
-        MyAnTargetType t = testDemo.class.getAnnotation(MyAnTargetType.class);
+/*        // 获取类上的注解MyAnTargetType
+        MyAnTargetType t = TestDemo.class.getAnnotation(MyAnTargetType.class);
         System.out.println("类上的注解值=" + t.value());
         MyAnTargetMethod tm = null;
         try {
-            Method method = testDemo.class.getDeclaredMethod("test", String.class);
+            Method method = TestDemo.class.getDeclaredMethod("test", String.class);
             tm = method.getAnnotation(MyAnTargetMethod.class);
             System.out.println("方法上的注解值=" + tm.value());
             Annotation[][] annotations = method.getParameterAnnotations();
@@ -40,11 +40,14 @@ public class testDemo {
                     }
                 }
             }
-            method.invoke(new testDemo(), "噶变默认参数");
+            method.invoke(new testDemo(), "改变默认参数");
             MyAnTargetField fieldAn = testDemo.class.getDeclaredField("field").getAnnotation(MyAnTargetField.class);
             System.out.println("字段上的注解值=" + fieldAn.value());
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
+        AnnotationDemo01 demo01 = TestDemo.class.getAnnotation(AnnotationDemo01.class);
+        String value = demo01.value();
+        System.out.println(value);
     }
 }
